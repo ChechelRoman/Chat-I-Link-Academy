@@ -53,6 +53,10 @@
     "prettier": "2.4.1"
   },
   "lint-staged": {
-    "*.{tsx,ts, css}": ["npm run lint, npm run pretty, git add"]
+    "*.{js,jsx,tsx,ts}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
