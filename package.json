@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint . --fix",
-    "pretty": "npx prettier --write ."
+    "pretty": "npx prettier --write .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +49,10 @@
     "@commitlint/config-conventional": "^13.2.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
     "prettier": "2.4.1"
+  },
+  "lint-staged": {
+    "*.{tsx,ts, css}": ["npm run lint, npm run pretty, git add"]
   }
 }
