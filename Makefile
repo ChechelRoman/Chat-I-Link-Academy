@@ -1,4 +1,4 @@
 lint:
 		npm run lint
 pretty:
-		npm run prettify
+		npm run pretty
