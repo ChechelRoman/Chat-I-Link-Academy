@@ -1,0 +1,38 @@
+@import '../../_settings/variables';
+
+.button {
+  width: 233px;
+  height: 56px;
+  background-color: $primary-blue;
+  border: none;
+  border-radius: 8px;
+  color: $secondary-text-color;
+  font-family: $base-font-family;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 23px;
+  text-align: center;
+
+  &:hover {
+    background-color: #4583DE;
+  }
+
+  &:active {
+    background-color: #2C6AC7;
+  }
+}
+
+.inactive {
+  background-color: #D1D1D1;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: #D1D1D1;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .button {
+    width: 347px;
+  }
+}

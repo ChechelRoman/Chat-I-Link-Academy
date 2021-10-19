@@ -1,10 +1,12 @@
 import React from 'react';
 import Input from './components/atoms/FormInput';
+import Button from './components/atoms/Button';
 import { useState } from 'react';
 
 function App() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [isValid, setValid] = useState(false);
 
   const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserName(event.target.value);
@@ -30,6 +32,7 @@ function App() {
         value={password}
         handler={handlePassword}
       />
+      <Button isValid={isValid}>Log in</Button>
     </React.Fragment>
   );
 }
