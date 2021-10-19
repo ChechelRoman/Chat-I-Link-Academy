@@ -1,0 +1,24 @@
+@import '../../_settings/variables';
+
+.input {
+  box-sizing: border-box;
+  width: 354px;
+  height: 56px;
+  border: 1px solid #b3cdf8;
+  border-radius: 8px;
+  font-family: $base-font-family;
+  font-weight: 400px;
+  font-size: 15px;
+  line-height: 23px;
+  padding: 16px 16px 17px 16px;
+  color: $primary-text-color;
+
+  &::placeholder {
+    color: #9F9F9F !important;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary-blue;
+  }
+}
