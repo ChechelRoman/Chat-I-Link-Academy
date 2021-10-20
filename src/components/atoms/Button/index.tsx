@@ -1,22 +1,14 @@
 import './style.scss';
 import cn from 'classnames';
 
-type ButtonProps = {
-  children: React.ReactNode | React.ReactNode[];
-  isValid: boolean;
-};
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ children, isValid }: ButtonProps) => {
-  const classes = cn({
-    button: true,
-    inactive: !isValid,
-  });
+const Button = (props: ButtonProps) => {
+  const { className, type = 'button', ...otherProps } = props;
 
-  return (
-    <button className={classes} type="submit">
-      {children}
-    </button>
-  );
+  const classes = cn(className, 'button');
+
+  return <button className={classes} type={type} {...otherProps} />;
 };
 
 export default Button;
