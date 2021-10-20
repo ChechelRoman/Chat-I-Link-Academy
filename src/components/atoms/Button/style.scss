@@ -12,23 +12,23 @@
   font-size: 15px;
   line-height: 23px;
   text-align: center;
+  cursor: pointer;
 
-  &:hover {
-    background-color: #4583DE;
+  &:not(:disabled) {
+
+    &:active {
+      background-color: #2C6AC7;
+    }
+
+    &:hover, :focus {
+      background-color: #4583DE;
+    }
   }
 
-  &:active {
-    background-color: #2C6AC7;
-  }
-}
-
-.inactive {
-  background-color: #D1D1D1;
-  cursor: not-allowed;
-
-  &:hover {
+   &:disabled {
     background-color: #D1D1D1;
-  }
+    cursor: not-allowed;
+   }
 }
 
 @media screen and (max-width: 375px) {
