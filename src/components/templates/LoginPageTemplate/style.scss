@@ -1,0 +1,21 @@
+.login-page-template {
+  max-width: 1440px;
+  height: 1080px;
+  display: flex;
+  margin: 0 auto;
+
+  .login-page-template__left {
+    height: 506px;
+    width: 474px;
+    margin: 256px 121px 315px 121px;
+  }
+
+  .login-page-template__right {
+    height: 1080px;
+    width: 724px;
+    background-color: #EFF5FF;
+  }
+}
+
+
+
