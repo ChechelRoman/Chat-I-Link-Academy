@@ -7,11 +7,13 @@
   border: none;
   border-radius: 8px;
   color: $secondary-text-color;
+  font-family: $base-font-family;
   font-weight: 500;
   font-size: 15px;
   line-height: 23px;
   text-align: center;
   cursor: pointer;
+  margin-top: 12px;
 
   &:not(:disabled) {
 
