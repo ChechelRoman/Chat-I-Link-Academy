@@ -10,7 +10,7 @@
   font-weight: 400px;
   font-size: 15px;
   line-height: 23px;
-  padding: 16px 16px 17px 16px;
+  padding: 16px 40px 17px 16px;
   color: $primary-text-color;
 
   &::placeholder {
@@ -21,4 +21,8 @@
     outline: none;
     border-color: $primary-blue;
   }
+}
+
+.invalid {
+  border-color: $error-color !important; 
 }
