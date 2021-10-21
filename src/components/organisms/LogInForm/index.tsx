@@ -24,7 +24,6 @@ const LogInForm = (props: LogInFormProps) => {
         <FormField
           label="User name"
           name="user"
-          value="Konstantin K"
           placeholder="Input user name"
           error="Something goes wrong"
         />
