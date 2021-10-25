@@ -3,7 +3,7 @@ import './style.scss';
 
 type ChatTemplateProps = {
   header: React.ReactNode | React.ReactNode[];
-  leftSideBar: React.ReactNode | React.ReactNode[];
+  usersBar: React.ReactNode | React.ReactNode[];
   userInfo: React.ReactNode | React.ReactNode[];
   messages: React.ReactNode | React.ReactNode[];
   sendMenu: React.ReactNode | React.ReactNode[];
@@ -11,7 +11,7 @@ type ChatTemplateProps = {
 
 const ChatTemplate: React.FC<ChatTemplateProps> = ({
   header,
-  leftSideBar,
+  usersBar,
   userInfo,
   messages,
   sendMenu,
@@ -20,7 +20,7 @@ const ChatTemplate: React.FC<ChatTemplateProps> = ({
     <div className="chat-template">
       <div className="header">{header}</div>
       <div className="content-wrapper">
-        <div className="left-side-bar">{leftSideBar}</div>
+        <div className="users-bar">{usersBar}</div>
         <div className="main-wrapper">
           <div className="user-info">{userInfo}</div>
           <div className="messages">{messages}</div>
