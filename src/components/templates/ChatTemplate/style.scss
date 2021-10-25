@@ -1,0 +1,43 @@
+.chat-template {
+  max-width: 1440px;
+  height: 1080px;
+  margin: 0 auto;
+
+  .header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+  }
+
+  .content-wrapper {
+    display: flex;
+    height: 1000px;
+
+    .left-side-bar {
+      width: 362px;
+      height: 100%;
+    }
+
+    .main-wrapper {
+      width: 1078px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .user-info {
+        width: 100%;
+        height: 96px;
+      }
+
+      .messages {
+        width: 100%;
+        height: 824px;
+      }
+
+      .send-menu {
+        width: 100%;
+        height: 80px;
+      }
+    }
+  }
+}
