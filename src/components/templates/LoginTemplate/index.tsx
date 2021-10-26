@@ -6,9 +6,10 @@ type LoginPageTempalateProps = {
   right: React.ReactNode | React.ReactNode[];
 };
 
-const LoginTempalate = (props: LoginPageTempalateProps) => {
-  const { left, right } = props;
-
+export const LoginTemplate: React.FC<LoginPageTempalateProps> = ({
+  left,
+  right,
+}) => {
   return (
     <div className="login-page-template">
       <div className="login-page-template__left">{left}</div>
@@ -16,5 +17,3 @@ const LoginTempalate = (props: LoginPageTempalateProps) => {
     </div>
   );
 };
-
-export default LoginTempalate;
