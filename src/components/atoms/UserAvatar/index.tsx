@@ -1,24 +1,19 @@
 import React from 'react';
 import maleIcon from './../../../images/male-user-icon.png';
 import femaleIcon from './../../../images/female-user-icon.png';
-import cn from 'classnames';
 import './style.scss';
 
 type UserAvatarProps = {
-  className: 'male' | 'female';
+  gender: 'male' | 'female';
 };
 
-const UserAvatar: React.FC<UserAvatarProps> = ({ className }) => {
-  const classes = cn(className, 'user-avatar');
-
-  switch (className) {
+export const UserAvatar: React.FC<UserAvatarProps> = ({ gender }) => {
+  switch (gender) {
     case 'male':
-      return <img src={maleIcon} className={classes} alt="male" />;
+      return <img src={maleIcon} className="user-avatar" alt="male" />;
     case 'female':
-      return <img src={femaleIcon} className={classes} alt="female" />;
+      return <img src={femaleIcon} className="user-avatar" alt="female" />;
     default:
       return null;
   }
 };
-
-export default UserAvatar;

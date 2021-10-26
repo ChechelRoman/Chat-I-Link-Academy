@@ -4,14 +4,16 @@ import './style.scss';
 
 import cn from 'classnames';
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
-
-const Input = (props: InputProps) => {
-  const { className, ...otherProps } = props;
-
-  const classes = cn(className, 'input');
-
-  return <input className={classes} {...otherProps} />;
+type InputProps = {
+  isValid: boolean;
+  name?: string;
+  placeholder?: string;
 };
 
-export default Input;
+export const Input: React.FC<InputProps> = ({ isValid, name, placeholder }) => {
+  const classes = cn('input', {
+    invalid: !isValid,
+  });
+
+  return <input className={classes} name={name} placeholder={placeholder} />;
+};

@@ -1,20 +1,20 @@
 import React from 'react';
-import FormField from '../../molecules/FormField';
-import Logo from '../../atoms/Logo';
-import Button from '../../atoms/Button';
+import { FormField } from '../../molecules/FormField';
+import { Logo } from '../../atoms/Logo';
+import { Button } from '../../atoms/Button';
 import { Header1, Header2 } from '../../atoms/Typography';
 import './style.scss';
 
 type LogInFormProps = {
-  className: string;
+  type: 'login-logo' | 'chat-logo';
 };
 
-const LogInForm = (props: LogInFormProps) => {
-  const { className } = props;
+export const LogInForm: React.FC<LogInFormProps> = ({ type }) => {
+  const isValid = true;
 
   return (
     <>
-      <Logo className={className} />
+      <Logo type={type} />
       <Header1>
         Welcome to <span className="header-blue">Chatty</span>
         <span className="header-grey">!</span>
@@ -22,12 +22,14 @@ const LogInForm = (props: LogInFormProps) => {
       <Header2>Please, authorize yourself</Header2>
       <form action="post">
         <FormField
+          isValid={isValid}
           label="User name"
           name="user"
           placeholder="Input user name"
-          error="Something goes wrong"
+          error=""
         />
         <FormField
+          isValid={isValid}
           label="Password"
           name="password"
           placeholder="Input password"
@@ -38,5 +40,3 @@ const LogInForm = (props: LogInFormProps) => {
     </>
   );
 };
-
-export default LogInForm;

@@ -1,28 +1,29 @@
 import React from 'react';
 import './style.scss';
-import cn from 'classnames';
-import Input from '../../atoms/Input';
-import ErrorIcon from '../../atoms/ErrorIcon';
-import { InputProps } from '../../atoms/Input';
+import { Input } from '../../atoms/Input';
+import { ErrorIcon } from '../../atoms/ErrorIcon';
 
 type FormFieldProps = {
-  className?: string;
+  isValid: boolean;
   label: string;
   error?: string;
-} & Omit<InputProps, 'className'>;
+  name?: string;
+  placeholder?: string;
+};
 
-const FormField = (props: FormFieldProps) => {
-  const { className, label, error, ...otherProps } = props;
-  const classes = cn(className, {
-    invalid: error,
-  });
-
+export const FormField: React.FC<FormFieldProps> = ({
+  label,
+  error,
+  isValid,
+  name,
+  placeholder,
+}) => {
   return (
     <div className="form-field">
       <label>
         <span className="form-field__label">{label}</span>
         <div className="form-field__input">
-          <Input className={classes} {...otherProps} />
+          <Input placeholder={placeholder} name={name} isValid={isValid} />
           {error ? <ErrorIcon /> : null}
         </div>
       </label>
@@ -30,5 +31,3 @@ const FormField = (props: FormFieldProps) => {
     </div>
   );
 };
-
-export default FormField;

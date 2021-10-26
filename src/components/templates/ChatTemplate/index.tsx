@@ -9,7 +9,7 @@ type ChatTemplateProps = {
   sendMenu: React.ReactNode | React.ReactNode[];
 };
 
-const ChatTemplate: React.FC<ChatTemplateProps> = ({
+export const ChatTemplate: React.FC<ChatTemplateProps> = ({
   header,
   usersBar,
   userInfo,
@@ -30,5 +30,3 @@ const ChatTemplate: React.FC<ChatTemplateProps> = ({
     </div>
   );
 };
-
-export default ChatTemplate;
