@@ -4,7 +4,7 @@ import femaleIcon from './../../../images/female-user-icon.png';
 import './style.scss';
 
 type UserAvatarProps = {
-  gender: 'male' | 'female';
+  gender: string;
 };
 
 export const UserAvatar: React.FC<UserAvatarProps> = ({ gender }) => {
