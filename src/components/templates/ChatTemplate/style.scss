@@ -1,43 +1,78 @@
 .chat-template {
   max-width: 1440px;
-  height: 1080px;
+  max-height: 1080px;
   margin: 0 auto;
 
   .header {
+    box-sizing: border-box;
     height: 80px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #88ABE3;
   }
 
   .content-wrapper {
     display: flex;
     height: 1000px;
+    width: 100%;
 
-    .users-bar {
+    .contacts-bar {
       width: 362px;
       height: 100%;
+      box-sizing: border-box;
+      border-right: 1px solid #88ABE3;
     }
 
-    .main-wrapper {
+    .main {
       width: 1078px;
       height: 100%;
+      background-image: url(./../../../images/chat-background.png);
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      background-size: 1077px 1080px;
+      background-position-y: -80px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
 
-      .user-info {
-        width: 100%;
-        height: 96px;
-      }
+      // .user-info {
+      //   width: 100%;
+      //   height: 96px;
+      // }
 
-      .messages {
-        width: 100%;
-        height: 824px;
-      }
+      // .messages {
+      //   box-sizing: border-box;
+      //   width: 100%;
+      //   height: 824px;
+      //   overflow-y: auto;
+      //   padding-bottom: 35px;
+      //   display: flex;
+      //   flex-direction: column;
+      //   justify-content: flex-end;
 
-      .send-menu {
-        width: 100%;
-        height: 80px;
-      }
+      //   &::-webkit-scrollbar {
+      //     width: 6px;
+      //   }
+
+      //   &::-webkit-scrollbar-track {
+      //     background: #E1ECFE;
+      //   }
+
+      //   &::-webkit-scrollbar-thumb {
+      //     background: #C5DAFF;
+      //     border-radius: 12px;
+
+      //     &:hover {
+      //       background: #5C98F1;
+      //     }
+      //   }
+
+      // }
+
+      // .send-menu {
+      //   width: 100%;
+      //   height: 80px;
+      // }
     }
   }
 }
