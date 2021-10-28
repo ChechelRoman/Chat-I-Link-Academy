@@ -1,14 +1,27 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import './style.scss';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = {
+  type: 'button' | 'submit' | 'reset' | undefined;
+  isFormValid: boolean;
+};
 
 export const Button: React.FC<ButtonProps> = ({
-  type = 'button',
+  type,
   children,
+  isFormValid,
 }) => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    if (isFormValid) {
+      history.push('/chat');
+    }
+  };
+
   return (
-    <button className="button" type={type}>
+    <button className="button" type={type} onClick={handleClick}>
       {children}
     </button>
   );
