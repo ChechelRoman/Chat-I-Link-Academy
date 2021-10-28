@@ -1,0 +1,51 @@
+@import "../../_settings/variables";
+
+.send-menu {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+
+  .send-menu__label {
+
+    .send-menu__attach-icon {
+      width: 22px;
+      height: 22px;
+      padding: 30px;
+      cursor: pointer;
+    }
+
+    .send-menu__file-input {
+      width: 0px;
+      height: 0px;
+      opacity: 0;
+    }
+  }
+
+  .send-menu__text-input {
+    box-sizing: border-box;
+    border: none;
+    height: 100%;
+    width: 900px;
+    outline: none;
+    font-family: $base-font-family;
+    color: $primary-text-color;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    padding: 30px 30px 30px 30px;
+
+    &::placeholder {
+      color: #CACACA;
+      font-weight: 500;
+    }
+  }
+
+  .send-menu__send-icon {
+    width: 24px;
+    height: 21px;
+    padding: 30px;
+    cursor: pointer;
+  }
+}
