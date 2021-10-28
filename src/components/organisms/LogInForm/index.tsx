@@ -43,7 +43,7 @@ export const LogInForm: React.FC = () => {
             <span className="form-field__label">User name</span>
             <div className="form-field__input">
               <input
-                {...register('userName', { required: true, minLength: 2 })}
+                {...register('userName', { required: true, minLength: 3 })}
                 className={userNameInputclasses}
                 placeholder="Input user name"
               />
@@ -52,7 +52,7 @@ export const LogInForm: React.FC = () => {
           </label>
           <span className="form-field__error">
             {errors.userName &&
-              'This field should be minimum 2 characters long'}
+              'This field should be minimum 3 characters long'}
           </span>
         </div>
 
@@ -61,7 +61,7 @@ export const LogInForm: React.FC = () => {
             <span className="form-field__label">Password</span>
             <div className="form-field__input">
               <input
-                {...register('password', { required: true, minLength: 2 })}
+                {...register('password', { required: true, minLength: 8 })}
                 className={passwordInputclasses}
                 placeholder="Input password"
               />
@@ -70,7 +70,7 @@ export const LogInForm: React.FC = () => {
           </label>
           <span className="form-field__error">
             {errors.password &&
-              'This field should be minimum 2 characters long'}
+              'This field should be minimum 8 characters long'}
           </span>
         </div>
 
