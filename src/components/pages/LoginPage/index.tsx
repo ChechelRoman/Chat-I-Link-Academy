@@ -7,7 +7,7 @@ import loginDecor from '../../../images/login-decor.png';
 export const LoginPage: React.FC = () => {
   return (
     <LoginTemplate
-      left={<LogInForm type="login-logo" />}
+      left={<LogInForm />}
       right={<img src={loginDecor} alt="login page decor"></img>}
     />
   );
