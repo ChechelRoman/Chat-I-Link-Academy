@@ -1,7 +1,68 @@
-.header-blue {
-  color: #5E93E7;
-}
+@import '../../_settings/variables';
 
-.header-grey {
-  color: #B3CDF8;
+.login-form-container {
+  .header-blue {
+    color: #5E93E7;
+  }
+  
+  .header-grey {
+    color: #B3CDF8;
+  }
+
+  .form-field {
+    font-size: 13px;
+    line-height: 19px;
+    width: 354px;
+    margin-bottom: 12px;
+
+    &__label {
+      display: block;
+      font-weight: 600;
+      color: $primary-text-color;
+      margin-bottom: 4px;
+    }
+  
+    &__input {
+      position: relative;
+
+      .input {
+        box-sizing: border-box;
+        width: 354px;
+        height: 56px;
+        border: 1px solid #b3cdf8;
+        border-radius: 8px;
+        font-family: $base-font-family;
+        font-weight: 400px;
+        font-size: 15px;
+        line-height: 23px;
+        padding: 16px 40px 17px 16px;
+        color: $primary-text-color;
+        margin-bottom: 4px;
+      
+        &::placeholder {
+          color: #9F9F9F;
+        }
+      
+        &:focus {
+          outline: none;
+          border-color: $primary-blue;
+        }
+      }
+
+      .invalid {
+        border-color: $error-color;
+      
+        &:focus {
+          outline: none;
+          border-color: $error-color;
+        }
+      }
+    }
+
+    &__error {
+      font-weight: 500;
+      color: $error-color;
+      margin-left: 8px;
+    }
+  }
 }
