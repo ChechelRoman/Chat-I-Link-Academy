@@ -1,0 +1,44 @@
+@import "/src/components/_settings/variables";
+
+.contact-item {
+  box-sizing: border-box;
+  display: flex;
+  padding: 12px 0 12px 24px;
+  width: 100%;
+  cursor: pointer;
+
+  .info {
+    padding-top: 5px;
+    padding-left: 12px;
+
+    .header4 {
+      padding-bottom: 4px;
+    }
+
+    .text2 {
+      color: #949494;
+
+      span {
+        color: #5E93E7;
+      }
+    }
+  }
+}
+
+.active {
+  background-color: $primary-blue;
+
+  .info {
+    .header4 {
+      color: $secondary-text-color;
+    }
+  
+    .text2 {
+      color: $secondary-text-color;
+
+      span {
+        color: $secondary-text-color;
+      }
+    }
+  }
+}
