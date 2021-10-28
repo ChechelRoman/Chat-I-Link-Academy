@@ -34,45 +34,6 @@
       background-position-y: -80px;
       display: flex;
       justify-content: center;
-
-      // .user-info {
-      //   width: 100%;
-      //   height: 96px;
-      // }
-
-      // .messages {
-      //   box-sizing: border-box;
-      //   width: 100%;
-      //   height: 824px;
-      //   overflow-y: auto;
-      //   padding-bottom: 35px;
-      //   display: flex;
-      //   flex-direction: column;
-      //   justify-content: flex-end;
-
-      //   &::-webkit-scrollbar {
-      //     width: 6px;
-      //   }
-
-      //   &::-webkit-scrollbar-track {
-      //     background: #E1ECFE;
-      //   }
-
-      //   &::-webkit-scrollbar-thumb {
-      //     background: #C5DAFF;
-      //     border-radius: 12px;
-
-      //     &:hover {
-      //       background: #5C98F1;
-      //     }
-      //   }
-
-      // }
-
-      // .send-menu {
-      //   width: 100%;
-      //   height: 80px;
-      // }
     }
   }
 }
