@@ -5,13 +5,13 @@ import cn from 'classnames';
 import attachedIcon1 from '../../../images/attached-file-icon-1.png';
 import attachedIcon2 from '../../../images/attached-file-icon-2.png';
 
-type MessageProps = {
+interface MessageProps {
   type: string;
   text?: string;
   source?: string;
   title?: string;
   size?: number;
-};
+}
 
 const formatSize = (size: any) => {
   let result;

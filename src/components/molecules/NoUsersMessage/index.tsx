@@ -3,9 +3,9 @@ import './style.scss';
 import aloneUser from '../../../images/alone-user.png';
 import { Header4 } from '../../atoms/Typography';
 
-type NoUsersMessageProps = {
+interface NoUsersMessageProps {
   description: string;
-};
+}
 
 export const NoUsersMessage: React.FC<NoUsersMessageProps> = ({
   description,

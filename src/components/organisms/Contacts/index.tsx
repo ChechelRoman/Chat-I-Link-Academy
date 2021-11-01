@@ -3,11 +3,11 @@ import './style.scss';
 import { ContactInfo } from '../../molecules/ContactInfo';
 import { Response } from '../../pages/ChatPage/mocks';
 
-type ContactsProps = {
+interface ContactsProps {
   chats: Response[];
   onClick: (currentChatId: string) => void;
   currentChatId: string;
-};
+}
 
 export const Contacts: React.FC<ContactsProps> = ({
   chats,

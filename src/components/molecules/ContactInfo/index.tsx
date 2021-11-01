@@ -4,7 +4,7 @@ import { UserAvatar } from '../../atoms/UserAvatar';
 import { Header4, Text2 } from '../../atoms/Typography';
 import cn from 'classnames';
 
-type ContactInfoProps = {
+interface ContactInfoProps {
   isActive: boolean;
   id: string;
   gender: string;
@@ -12,7 +12,7 @@ type ContactInfoProps = {
   lastMessage: string;
   source: string;
   onClick: (currentChatId: string) => void;
-};
+}
 
 const shortenMessage = (message: string) => {
   let result = '';

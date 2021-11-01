@@ -4,7 +4,7 @@ import { useState } from 'react';
 import sendIcon from '../../../images/send-icon.png';
 import attachIcon from '../../../images/attach-icon.png';
 
-type ChatBodySendMenuProps = {
+interface ChatBodySendMenuProps {
   sentMessages: {
     text?: string;
     type: string;
@@ -21,7 +21,7 @@ type ChatBodySendMenuProps = {
       size?: number;
     }[]
   ) => void;
-};
+}
 
 export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({
   sentMessages,
