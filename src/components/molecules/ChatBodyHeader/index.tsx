@@ -2,10 +2,10 @@ import React from 'react';
 import './style.scss';
 import { Header3, Text1 } from '../../atoms/Typography';
 
-type ContactHeaderProps = {
+interface ContactHeaderProps {
   lastSeen: string;
   contactName: string;
-};
+}
 
 export const ChatBodyHeader: React.FC<ContactHeaderProps> = ({
   lastSeen,

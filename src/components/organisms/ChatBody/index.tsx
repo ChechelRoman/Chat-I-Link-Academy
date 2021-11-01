@@ -8,10 +8,10 @@ import { Header4 } from '../../atoms/Typography';
 import { Response } from '../../pages/ChatPage/mocks';
 import uniqueId from 'lodash/uniqueId';
 
-type ChatBodyProps = {
+interface ChatBodyProps {
   chats: Response[];
   currentChatId: string;
-};
+}
 
 export const ChatBody: React.FC<ChatBodyProps> = ({ chats, currentChatId }) => {
   /*

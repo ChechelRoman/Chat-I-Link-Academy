@@ -2,10 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import './style.scss';
 
-type ButtonProps = {
+interface ButtonProps {
   type: 'button' | 'submit' | 'reset' | undefined;
   isFormValid: boolean;
-};
+}
 
 export const Button: React.FC<ButtonProps> = ({
   type,
