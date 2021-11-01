@@ -27,7 +27,7 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({
   sentMessages,
   onClick,
 }) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState<string>('');
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -42,12 +42,18 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({
   };
 
   const handleUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // @ts-ignore: Object is possibly 'null'.
-    const file = event.target.files[0];
-    onClick([
-      ...sentMessages,
-      { size: file.size, type: 'file', source: 'outcoming', title: file.name },
-    ]);
+    if (event.target.files !== null) {
+      const file = event.target.files[0];
+      onClick([
+        ...sentMessages,
+        {
+          size: file.size,
+          type: 'file',
+          source: 'outcoming',
+          title: file.name,
+        },
+      ]);
+    }
   };
 
   return (
