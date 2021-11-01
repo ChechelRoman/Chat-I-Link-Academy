@@ -6,7 +6,6 @@ import { Message } from '../../molecules/Message';
 import { ChatBodySendMenu } from '../../molecules/ChatBodySendMenu';
 import { Header4 } from '../../atoms/Typography';
 import { Response } from '../../pages/ChatPage/mocks';
-import uniqueId from 'lodash/uniqueId';
 
 interface ChatBodyProps {
   chats: Response[];
@@ -36,9 +35,9 @@ export const ChatBody: React.FC<ChatBodyProps> = ({ chats, currentChatId }) => {
   }
 
   const activeChat = chats.filter((chat) => chat.id === currentChatId)[0];
-  const messageList = activeChat.messages.map((message) => {
+  const messageList = activeChat.messages.map((message, index) => {
     return (
-      <li key={uniqueId()}>
+      <li key={index}>
         <Message
           type={message.type}
           text={message.text}
@@ -54,9 +53,9 @@ export const ChatBody: React.FC<ChatBodyProps> = ({ chats, currentChatId }) => {
     Эту константу я также сделал для проверки отправленных мной сообщений и вставил ее в рендерящийся список.
     Я понимаю, что так делать нехорошо, тут лучше уже использовать стейт менеджер, но еще руки не дошли.
   */
-  const sentMessagesList = sentMessages.map((message) => {
+  const sentMessagesList = sentMessages.map((message, index) => {
     return (
-      <li key={uniqueId()}>
+      <li key={index}>
         <Message
           type={message.type}
           text={message.text}
