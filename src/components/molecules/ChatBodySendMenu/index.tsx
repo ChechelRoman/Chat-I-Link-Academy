@@ -3,6 +3,7 @@ import './style.scss';
 import { useState } from 'react';
 import sendIcon from '../../../images/send-icon.png';
 import attachIcon from '../../../images/attach-icon.png';
+import { SentMessages } from '../../organisms/ChatBody';
 
 interface ChatBodySendMenuProps {
   sentMessages: {
@@ -12,15 +13,7 @@ interface ChatBodySendMenuProps {
     title?: string;
     size?: number;
   }[];
-  onClick: (
-    sentMessages: {
-      text?: string;
-      type: string;
-      source?: string;
-      title?: string;
-      size?: number;
-    }[]
-  ) => void;
+  onClick: (sentMessages: SentMessages[]) => void;
 }
 
 export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({

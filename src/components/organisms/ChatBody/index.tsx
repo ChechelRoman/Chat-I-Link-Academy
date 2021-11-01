@@ -12,19 +12,19 @@ interface ChatBodyProps {
   currentChatId: string;
 }
 
+export interface SentMessages {
+  text?: string;
+  type: string;
+  source?: string;
+  title?: string;
+  size?: number;
+}
+
 export const ChatBody: React.FC<ChatBodyProps> = ({ chats, currentChatId }) => {
   /*
     В данном компоненте я использую этот хук для проверки верстки отправленных мною сообщений.
   */
-  const [sentMessages, setSentMessages] = useState<
-    {
-      text?: string;
-      type: string;
-      source?: string;
-      title?: string;
-      size?: number;
-    }[]
-  >([]);
+  const [sentMessages, setSentMessages] = useState<SentMessages[]>([]);
 
   if (currentChatId === 'empty') {
     return (
