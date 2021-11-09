@@ -3,51 +3,53 @@ import './style.scss';
 import { useState } from 'react';
 import sendIcon from '../../../images/send-icon.png';
 import attachIcon from '../../../images/attach-icon.png';
-import { SentMessages } from '../../organisms/ChatBody';
+// import { SentMessages } from '../../organisms/ChatBody';
 
-interface ChatBodySendMenuProps {
-  sentMessages: {
-    text?: string;
-    type: string;
-    source?: string;
-    title?: string;
-    size?: number;
-  }[];
-  onClick: (sentMessages: SentMessages[]) => void;
-}
+// interface ChatBodySendMenuProps {
+//   sentMessages: {
+//     text?: string;
+//     type: string;
+//     source?: string;
+//     title?: string;
+//     size?: number;
+//   }[];
+//   onClick: (sentMessages: SentMessages[]) => void;
+// }
 
-export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({
-  sentMessages,
-  onClick,
-}) => {
+// export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({
+//   sentMessages,
+//   onClick,
+// }) => {
+
+export const ChatBodySendMenu: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
-  const handleClick = () => {
-    onClick([
-      ...sentMessages,
-      { text: inputValue, type: 'text', source: 'outcoming' },
-    ]);
-    setInputValue('');
-  };
+  // const handleClick = () => {
+  //   onClick([
+  //     ...sentMessages,
+  //     { text: inputValue, type: 'text', source: 'outcoming' },
+  //   ]);
+  //   setInputValue('');
+  // };
 
-  const handleUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files !== null) {
-      const file = event.target.files[0];
-      onClick([
-        ...sentMessages,
-        {
-          size: file.size,
-          type: 'file',
-          source: 'outcoming',
-          title: file.name,
-        },
-      ]);
-    }
-  };
+  // const handleUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (event.target.files !== null) {
+  //     const file = event.target.files[0];
+  //     onClick([
+  //       ...sentMessages,
+  //       {
+  //         size: file.size,
+  //         type: 'file',
+  //         source: 'outcoming',
+  //         title: file.name,
+  //       },
+  //     ]);
+  //   }
+  // };
 
   return (
     <div className="send-menu">
@@ -60,7 +62,7 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({
         <input
           className="send-menu__file-input"
           type="file"
-          onChange={handleUpload}
+          // onChange={handleUpload}
         />
       </label>
       <input
@@ -74,7 +76,7 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = ({
         className="send-menu__send-icon"
         src={sendIcon}
         alt="send icon"
-        onClick={handleClick}
+        // onClick={handleClick}
       />
     </div>
   );

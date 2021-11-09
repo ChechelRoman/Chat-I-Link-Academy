@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.scss';
 import { ContactInfo } from '../../molecules/ContactInfo';
-import { Response } from '../../pages/ChatPage/mocks';
+// import { Response } from '../../pages/ChatPage/mocks';
+import { UserList } from '../../pages/ChatPage';
 
 interface ContactsProps {
-  chats: Response[];
+  chats: UserList[];
   onClick: (currentChatId: string) => void;
   currentChatId: string;
 }
@@ -14,16 +15,16 @@ export const Contacts: React.FC<ContactsProps> = ({
   onClick,
   currentChatId,
 }) => {
-  const contactItems = chats.map((chat) => {
+  const contactItems = chats.map((chat, index) => {
     return (
-      <li key={chat.id}>
+      <li key={index}>
         <ContactInfo
-          isActive={chat.id === currentChatId}
+          isActive={String(index) === currentChatId}
           contactName={chat.name}
           gender={chat.gender}
-          id={chat.id}
-          lastMessage={chat.messages[chat.messages.length - 1].text}
-          source={chat.messages[chat.messages.length - 1].source}
+          id={String(index)}
+          // lastMessage={chat.messages[chat.messages.length - 1].text}
+          // source={chat.messages[chat.messages.length - 1].source}
           onClick={onClick}
         />
       </li>
