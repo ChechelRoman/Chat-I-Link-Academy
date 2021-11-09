@@ -37,3 +37,155 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .chat-template {
+    width: 375px;
+    height: 717px;
+
+    .chosen {
+      .header {
+        display: none;
+      }
+    }
+
+    .header-wrapper {
+      width: 100%;
+      .header {
+        height: 64px;
+        border-color: #D7E6FF;
+  
+        .chat-logo {
+          width: 63px;
+          height: 22px;
+          padding: 18px 0px 23px 14px;
+        }
+  
+        .profile-icon {
+          width: 36px;
+          height: 36px;
+          padding: 14px 13px 14px 0px;
+        }
+      }
+    }
+
+    .content-wrapper {
+      height: 653px;
+      width: 375px;
+
+      .contacts-wrapper {
+        width: 100%;
+        .contacts-bar {
+          width: 100%;
+          border-right: none;
+          padding-top: 22px;
+  
+          .alone-user {
+            padding: 175px 88px 24px 88px;
+          }
+  
+          .header4 {
+            font-size: 14px;
+            line-height: 17px;
+            padding-left: 93px;
+          }
+  
+          .contact-item {
+            padding: 10px 0px 10px 14px;
+            .info {
+              .header4 {
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .chosen {
+        .contacts-bar {
+          display: none;
+        }
+      }
+
+      .main-wrapper {
+        .main {
+          display: none;
+        }
+      }
+
+      .chosen {
+        .main {
+          display: block;
+          width: 375px;
+          height: 717px;
+          background-image: url(../../../images/mobile-chat-background.png);
+          background-origin: border-box;
+          background-repeat: no-repeat;
+          background-size: 375px 717px;
+          background-position-y: 0px;
+
+          .chat-body {
+            &__header {
+              .contact-header {
+                height: 72px;
+                display: flex;
+                padding: 0;
+
+                .back-arrow {
+                  display: block;
+                  width: 16px;
+                  height: 16px;
+                  padding: 28px 0 28px 14px;
+                  cursor: pointer;
+                }
+
+                .user-avatar {
+                  display: block;
+                  width: 40px;
+                  height: 40px;
+                  padding: 16px 0px 16px 24px;
+                }
+
+                .header3 {
+                  font-size: 15px;
+                  line-height: 18px;
+                  padding-top: 19px;
+                  padding-left: 12px;
+                }
+              }
+            }
+
+            &__send-menu {
+              height: 48px;
+
+              .send-menu {
+                &__label {
+                  .send-menu__attach-icon {
+                    width: 16px;
+                    height: 17px;
+                    padding: 15px 20px 15px 18px;
+                  }
+                }
+
+                &__text-input {
+                  height: 48px;
+                  width: 280px;
+                  padding: 16px 0px;
+                  font-size: 14px;
+                  line-height: 17px;
+                  font-weight: 400;
+                }
+
+                &__send-icon {
+                  width: 16px;
+                  height: 14px;
+                  padding: 17px 13px 17px 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
