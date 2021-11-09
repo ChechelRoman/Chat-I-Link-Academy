@@ -1,7 +1,7 @@
 @import '../../_settings/variables';
 
-.button {
-  width: 233px;
+.submit-button {
+  width: 171px;
   height: 56px;
   background-color: $primary-blue;
   border: none;
@@ -17,16 +17,51 @@
 
   &:not(:disabled) {
 
-    &:active {
-      background-color: #2C6AC7;
-    }
-
     &:hover, :focus {
       background-color: #4583DE;
+    }
+
+    &:active {
+      background-color: #2C6AC7;
     }
   }
 
    &:disabled {
+    background-color: #D1D1D1;
+    cursor: not-allowed;
+   }
+}
+
+.button {
+  width: 171px;
+  height: 56px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #5C98F1;
+  color: $primary-blue;
+  font-family: $base-font-family;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 23px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-left: 12px;
+
+  &:not(:disabled) {
+
+    &:hover, :focus {
+      background-color: #F3F8FF;
+    }
+
+    &:active {
+      background-color: #DFECFF;
+    }
+  }
+
+   &:disabled {
+    background-color: #FFFFFF;
+    color: #D1D1D1;
     background-color: #D1D1D1;
     cursor: not-allowed;
    }
