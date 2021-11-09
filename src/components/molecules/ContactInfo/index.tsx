@@ -9,8 +9,8 @@ interface ContactInfoProps {
   id: string;
   gender: string;
   contactName: string;
-  lastMessage: string;
-  source: string;
+  // lastMessage: string;
+  // source: string;
   onClick: (currentChatId: string) => void;
 }
 
@@ -29,9 +29,9 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({
   id,
   gender,
   contactName,
-  lastMessage,
+  // lastMessage,
   isActive,
-  source,
+  // source,
   onClick,
 }) => {
   const classes = cn('contact-item', {
@@ -47,14 +47,14 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({
       <UserAvatar gender={gender} />
       <div className="info">
         <Header4>{contactName}</Header4>
-        {source === 'outcoming' ? (
+        {/* {source === 'outcoming' ? (
           <Text2>
             <span>You: </span>
             {shortenMessage(lastMessage)}
           </Text2>
         ) : (
           <Text2>{shortenMessage(lastMessage)}</Text2>
-        )}
+        )} */}
       </div>
     </div>
   );
