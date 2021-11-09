@@ -1,27 +1,37 @@
 import React from 'react';
-import { useHistory } from 'react-router';
 import './style.scss';
+import { useHistory } from 'react-router';
+import cn from 'classnames';
 
 interface ButtonProps {
-  type: 'button' | 'submit' | 'reset' | undefined;
-  isFormValid: boolean;
+  type: 'button' | 'submit' | 'reset';
+  direction?: 'login' | 'registration';
 }
 
 export const Button: React.FC<ButtonProps> = ({
   type,
   children,
-  isFormValid,
+  direction,
 }) => {
   const history = useHistory();
 
   const handleClick = () => {
-    if (isFormValid) {
-      history.push('/chat');
+    if (direction === 'login') {
+      history.push('/login');
+    }
+
+    if (direction === 'registration') {
+      history.push('./sign_in');
     }
   };
 
+  const classes = cn({
+    'submit-button': type === 'submit',
+    button: type === 'button',
+  });
+
   return (
-    <button className="button" type={type} onClick={handleClick}>
+    <button className={classes} type={type} onClick={handleClick}>
       {children}
     </button>
   );
