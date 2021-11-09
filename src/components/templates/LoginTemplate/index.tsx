@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.scss';
 
-type LoginPageTempalateProps = {
+type LoginTempalateProps = {
   left: React.ReactNode | React.ReactNode[];
 };
 
-export const LoginTemplate: React.FC<LoginPageTempalateProps> = ({ left }) => {
+export const LoginTemplate: React.FC<LoginTempalateProps> = ({ left }) => {
   return (
     <div className="login-page-template">
       <div className="login-page-template__left">{left}</div>
