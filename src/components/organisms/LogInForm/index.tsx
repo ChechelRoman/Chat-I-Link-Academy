@@ -9,7 +9,8 @@ import { useHistory } from 'react-router';
 import { useState } from 'react';
 import cn from 'classnames';
 import refreshCaptchaIcon from '../../../images/refresh-captcha-icon.png';
-const axios = require('axios').default;
+// const axios = require('axios').default;
+import axios, { Axios, AxiosResponse } from 'axios';
 
 interface LogInInputs {
   login: string;
@@ -45,14 +46,13 @@ export const LogInForm: React.FC = () => {
     formData.append('password', data.password);
     formData.append('captcha', data.captcha);
     try {
-      const response = await axios({
-        method: 'post',
-        url: 'http://109.194.37.212:93/api/auth/login',
-        data: formData,
-      });
+      const response = await axios.post<string>(
+        'http://109.194.37.212:93/api/auth/login',
+        formData
+      );
 
       if (response.status !== 400) {
-        const data: string = response.data;
+        const data = response.data;
         localStorage.setItem('connect_key', data);
         history.push('./chat');
       }
