@@ -10,7 +10,7 @@ import { capitalize } from './utils';
 import dropdownArrow from '../../../images/dropdown-arrow.png';
 import refreshCaptchaIcon from '../../../images/refresh-captcha-icon.png';
 import cn from 'classnames';
-const axios = require('axios').default;
+import axios from 'axios';
 
 interface SignInFormInputs {
   login: string;
@@ -21,23 +21,26 @@ interface SignInFormInputs {
   captcha: string;
 }
 
-interface GenderList {
+interface Gender {
   id: string;
   gender: string;
 }
 
+interface ResponseGender {
+  genders: Gender[];
+}
+
 export const SignInForm: React.FC = () => {
   const [isDropped, setIsDropped] = useState<boolean>(false);
-  const [genderList, setGenderList] = useState<GenderList[]>([]);
+  const [genderList, setGenderList] = useState<Gender[]>([]);
   const [selectValue, setSelectValue] = useState<string>('');
   const [selectText, setSelectText] = useState<string>('');
   const [dateNow, setDateNow] = useState<number>(Date.now);
 
   useEffect(() => {
-    axios({
-      method: 'get',
-      url: 'http://109.194.37.212:93/api/auth',
-    }).then((response: any) => setGenderList(response.data.genders));
+    axios
+      .get<ResponseGender>('http://109.194.37.212:93/api/auth')
+      .then((response) => setGenderList(response.data.genders));
   }, []);
 
   const {
