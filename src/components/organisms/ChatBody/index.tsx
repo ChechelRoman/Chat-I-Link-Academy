@@ -1,17 +1,19 @@
 import React from 'react';
 import './style.scss';
 // import { useState } from 'react';
-import { ChatBodyHeader } from '../../molecules/ChatBodyHeader';
+import {
+  ChatBodyHeader,
+  ContactHeaderProps,
+} from '../../molecules/ChatBodyHeader';
 // import { Message } from '../../molecules/Message';
 import { ChatBodySendMenu } from '../../molecules/ChatBodySendMenu';
 import { Header4 } from '../../atoms/Typography';
 // import { Response } from '../../pages/ChatPage/mocks';
 import { UserList } from '../../pages/ChatPage';
-
 interface ChatBodyProps {
   chats: UserList[];
   currentChatId: string;
-  onClick: (currentChatId: string) => void;
+  onClick: ContactHeaderProps['onClick'];
 }
 
 // export interface SentMessages {
@@ -32,7 +34,7 @@ export const ChatBody: React.FC<ChatBodyProps> = ({
   */
   // const [sentMessages, setSentMessages] = useState<SentMessages[]>([]);
 
-  if (currentChatId === 'empty') {
+  if (currentChatId === undefined) {
     return (
       <div className="user-tip">
         <Header4>Select a chat to start messaging</Header4>
