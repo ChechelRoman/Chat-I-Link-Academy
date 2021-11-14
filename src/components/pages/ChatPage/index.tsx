@@ -7,6 +7,7 @@ import { Contacts } from '../../organisms/Contacts';
 import { NoUsersMessage } from '../../molecules/NoUsersMessage';
 import { LoadingIcon } from '../../atoms/LoadingIcon';
 import { useEffect } from 'react';
+import { useHistory, useParams } from 'react-router';
 // import { emptyResponse } from './mocks';
 
 const websocket = new WebSocket(
@@ -23,7 +24,17 @@ export interface UserList {
 export const ChatPage: React.FC = () => {
   const [list, setList] = useState<UserList[]>([]);
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  const [currentChatId, setcurrentChatId] = useState<string>('empty');
+  // const [currentChatId, setcurrentChatId] = useState<string>('empty');
+  const history = useHistory();
+  const { id } = useParams<{ id: string }>();
+
+  const handleClickChat = (id: string) => {
+    history.push(`/chat/${id}`);
+  };
+
+  const handleClickBackward = () => {
+    history.push('/chat');
+  };
 
   useEffect(() => {
     websocket.onopen = () => setIsOpened(true);
@@ -49,7 +60,7 @@ export const ChatPage: React.FC = () => {
       <ChatTemplate
         header={<ChatHeader />}
         chatBody={<LoadingIcon />}
-        isActive={currentChatId}
+        isActive={id}
       />
     );
   }
@@ -61,7 +72,7 @@ export const ChatPage: React.FC = () => {
         contactsBar={
           <NoUsersMessage description="There is no other users yet" />
         }
-        isActive={currentChatId}
+        isActive={id}
       />
     );
   }
@@ -83,19 +94,20 @@ export const ChatPage: React.FC = () => {
       contactsBar={
         <Contacts
           chats={list}
-          onClick={setcurrentChatId}
-          currentChatId={currentChatId}
+          // onClick={setcurrentChatId}
+          onClick={handleClickChat}
+          currentChatId={id}
         />
       }
       header={<ChatHeader />}
       chatBody={
         <ChatBody
           chats={list}
-          currentChatId={currentChatId}
-          onClick={setcurrentChatId}
+          currentChatId={id}
+          onClick={handleClickBackward}
         />
       }
-      isActive={currentChatId}
+      isActive={id}
     />
   );
 };

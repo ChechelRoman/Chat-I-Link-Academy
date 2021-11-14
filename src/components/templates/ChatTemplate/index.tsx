@@ -16,15 +16,15 @@ export const ChatTemplate: React.FC<ChatTemplateProps> = ({
   isActive,
 }) => {
   const headerClassnames = cn('header-wrapper', {
-    chosen: isActive !== 'empty',
+    chosen: isActive,
   });
 
   const contactsClassnames = cn('contacts-wrapper', {
-    chosen: isActive !== 'empty',
+    chosen: isActive,
   });
 
   const mainClassnames = cn('main-wrapper', {
-    chosen: isActive !== 'empty',
+    chosen: isActive,
   });
 
   return (

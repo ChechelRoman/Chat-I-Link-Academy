@@ -14,6 +14,9 @@ export const Routes: React.FC = () => {
       <Route path={SCREENS.SCREEN_SIGN} exact>
         <SignInPage />
       </Route>
+      <Route path={SCREENS.SCREEN_EMPTY_CHAT} exact>
+        <ChatPage />
+      </Route>
       <Route path={SCREENS.SCREEN_CHAT} exact>
         <ChatPage />
       </Route>

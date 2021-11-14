@@ -3,10 +3,10 @@ import './style.scss';
 import { Header3, Text1 } from '../../atoms/Typography';
 import { UserAvatar } from '../../atoms/UserAvatar';
 import backArrow from '../../../images/back-arrow-icon.png';
-interface ContactHeaderProps {
+export interface ContactHeaderProps {
   // lastSeen: string;
   contactName: string;
-  onClick: (currentChatId: string) => void;
+  onClick: React.MouseEventHandler<HTMLImageElement>;
   gender: string;
 }
 
@@ -16,17 +16,13 @@ export const ChatBodyHeader: React.FC<ContactHeaderProps> = ({
   onClick,
   gender,
 }) => {
-  const handleClick = () => {
-    onClick('empty');
-  };
-
   return (
     <div className="contact-header">
       <img
         className="back-arrow"
         src={backArrow}
         alt="back arrow icon"
-        onClick={handleClick}
+        onClick={onClick}
       />
       <UserAvatar gender={gender} />
       <Header3>{contactName}</Header3>
