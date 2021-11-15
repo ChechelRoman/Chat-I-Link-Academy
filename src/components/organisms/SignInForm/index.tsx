@@ -114,8 +114,10 @@ export const SignInForm: React.FC = () => {
       if (data === true) {
         history.push('/login');
       }
-    } catch (error: any) {
-      alert(error.response.data);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        alert(error.response?.data);
+      }
     }
   };
 
