@@ -9,8 +9,7 @@ import { useHistory } from 'react-router';
 import { useState } from 'react';
 import cn from 'classnames';
 import refreshCaptchaIcon from '../../../images/refresh-captcha-icon.png';
-// const axios = require('axios').default;
-import axios, { Axios, AxiosResponse } from 'axios';
+import axios from 'axios';
 
 interface LogInInputs {
   login: string;
@@ -56,8 +55,10 @@ export const LogInForm: React.FC = () => {
         localStorage.setItem('connect_key', data);
         history.push('./chat');
       }
-    } catch (error: any) {
-      alert(error.response.data);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        alert(error.response?.data);
+      }
     }
   };
 

@@ -13,16 +13,20 @@ interface MessageProps {
   size?: number;
 }
 
-const formatSize = (size: any) => {
-  let result;
+const formatSize = (size: number | undefined) => {
+  if (size) {
+    let result;
 
-  if (size > 1048576) {
-    result = `${(size / 1048576).toFixed(1)} MB`;
-  } else {
-    result = `${(size / 1024).toFixed(1)} KB`;
+    if (size > 1048576) {
+      result = `${(size / 1048576).toFixed(1)} MB`;
+    } else {
+      result = `${(size / 1024).toFixed(1)} KB`;
+    }
+
+    return result;
   }
 
-  return result;
+  return;
 };
 
 export const Message: React.FC<MessageProps> = ({
