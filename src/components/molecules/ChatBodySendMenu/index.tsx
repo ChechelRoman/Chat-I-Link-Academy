@@ -8,7 +8,6 @@ import chats from '../../../store/chats';
 import { observer } from 'mobx-react-lite';
 import { uniqueId } from 'lodash';
 import axios from 'axios';
-import cn from 'classnames';
 
 interface ChatBodySendMenuProps {
   socket: WebSocket;
@@ -22,26 +21,19 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
     const [file, setFile] = useState<File | undefined>(undefined);
     const [link, setLink] = useState<string>('');
 
-    const sendMenuClassnames = cn('send-menu', {
-      uploading: uploadStatus === 'uploading',
-    });
-
     const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
       setInputValue(event.target.value);
     };
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
       const isAttached = file === undefined ? false : true;
 
+      if (uploadStatus === 'uploading') {
+        alert('File is uploading!');
+      }
+
       if (isAttached) {
-        event.preventDefault();
-        socket.send(
-          `'${JSON.stringify({
-            type: 'message',
-            data: inputValue,
-            filelink: `http://109.194.37.212:93/${link}`,
-          })}'`
-        );
         const message: Messages = {
           attached: isAttached,
           id: uniqueId(),
@@ -49,22 +41,41 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
           text: inputValue,
           size: file?.size,
           title: file?.name,
-          link: `http://109.194.37.212:93/${link}`,
+          link: `http://109.194.37.212:93${link}`,
         };
+        if (message.size === undefined) {
+          return;
+        }
+        socket.send(
+          `'${JSON.stringify({
+            type: 'message',
+            data: {
+              message: inputValue,
+              filelink: `http://109.194.37.212:93${link}`,
+              targetId: chatId,
+            },
+          })}'`
+        );
         chats.addMessage(chatId, message);
         setFile(undefined);
         setInputValue('');
+        setUploadStatus('no-upload');
       } else {
-        event.preventDefault();
-        socket.send(
-          `'${JSON.stringify({ type: 'message', data: inputValue })}'`
-        );
         const message: Messages = {
           attached: isAttached,
           id: uniqueId(),
           source: 'outcoming',
           text: inputValue,
         };
+        if (message.text === '') {
+          return;
+        }
+        socket.send(
+          `'${JSON.stringify({
+            type: 'message',
+            data: { message: inputValue, targetId: chatId },
+          })}'`
+        );
         chats.addMessage(chatId, message);
         setInputValue('');
       }
@@ -98,7 +109,7 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
 
     return (
       <form onSubmit={handleSubmit}>
-        <div className={sendMenuClassnames}>
+        <div className="send-menu">
           <label className="send-menu__label">
             <img
               className="send-menu__attach-icon"
@@ -112,13 +123,18 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
             />
           </label>
           <input
+            ref={(inputElement) => {
+              if (inputElement) {
+                inputElement.focus();
+              }
+            }}
             value={inputValue}
             onChange={handleInput}
             className="send-menu__text-input"
             type="text"
             placeholder="Write something..."
           />
-          <button type="submit" className="sumbit-button"></button>
+          <button type="submit" className="send-menu__submit-button"></button>
           <img
             className="send-menu__send-icon"
             src={sendIcon}
