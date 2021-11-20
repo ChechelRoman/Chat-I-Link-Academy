@@ -60,7 +60,11 @@ export const ChatBody: React.FC<ChatBodyProps> = observer(
           <ul>{messageList}</ul>
         </div>
         <div className="chat-body__send-menu">
-          <ChatBodySendMenu socket={socket} chatId={activeChat.id} />
+          <ChatBodySendMenu
+            socket={socket}
+            id={activeChat.id}
+            name={activeChat.name}
+          />
         </div>
       </div>
     );
