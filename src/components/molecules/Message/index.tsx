@@ -2,75 +2,50 @@ import React from 'react';
 import './style.scss';
 import { Text1, Text2 } from '../../atoms/Typography';
 import cn from 'classnames';
-import attachedIcon1 from '../../../images/attached-file-icon-1.png';
-import attachedIcon2 from '../../../images/attached-file-icon-2.png';
+import attachedIcon1 from '../../../images/attached-file-icon-1.svg';
+import attachedIcon2 from '../../../images/attached-file-icon-2.svg';
+import { Messages } from '../../../store/chats';
+import { formatFileSize } from '../../../utils/formatFileSize';
 
-interface MessageProps {
-  type: string;
-  text?: string;
-  source?: string;
-  title?: string;
-  size?: number;
-}
-
-const formatSize = (size: number | undefined) => {
-  if (size) {
-    let result;
-
-    if (size > 1048576) {
-      result = `${(size / 1048576).toFixed(1)} MB`;
-    } else {
-      result = `${(size / 1024).toFixed(1)} KB`;
-    }
-
-    return result;
-  }
-
-  return;
-};
-
-export const Message: React.FC<MessageProps> = ({
+export const Message: React.FC<Messages> = ({
+  attached,
   text,
   source,
-  type,
   title,
   size,
+  link,
 }) => {
-  const classes = cn(source, {
-    'text-message': type === 'text',
-    'file-message': type === 'file',
-  });
+  const classes = cn(source, 'message');
 
-  if (type === 'text') {
-    return (
-      <div className={classes}>
-        <Text1>{text}</Text1>
-      </div>
-    );
+  if (text === '' && size === undefined) {
+    return null;
   }
 
-  if (type === 'file') {
-    return (
-      <div className={classes}>
-        <div className="icon-container">
-          <img
-            className="attach-icon-1"
-            src={attachedIcon1}
-            alt="attached file icon"
-          />
-          <img
-            className="attach-icon-2"
-            src={attachedIcon2}
-            alt="attached file icon"
-          />
+  return (
+    <div className={classes}>
+      {attached ? (
+        <div className="file-container">
+          <div className="icon-container">
+            <img
+              className="attach-icon-1"
+              src={attachedIcon1}
+              alt="attached file icon"
+            />
+            <img
+              className="attach-icon-2"
+              src={attachedIcon2}
+              alt="attached file icon"
+            />
+          </div>
+          <div className="file-info-container">
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <Text1>{title}</Text1>
+            </a>
+            <Text2>{formatFileSize(size)}</Text2>
+          </div>
         </div>
-        <div className="file-info-container">
-          <Text1>{title}</Text1>
-          <Text2>{formatSize(size)}</Text2>
-        </div>
-      </div>
-    );
-  }
-
-  return null;
+      ) : null}
+      {text ? <Text1>{text}</Text1> : null}
+    </div>
+  );
 };

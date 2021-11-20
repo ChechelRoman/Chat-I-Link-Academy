@@ -1,5 +1,5 @@
 import React from 'react';
-import errorIcon from '../../../images/icon-error.png';
+import errorIcon from '../../../images/error-icon.svg';
 import './style.scss';
 
 export const ErrorIcon: React.FC = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 import { Logo } from '../../atoms/Logo';
-import ProfileIcon from '../../../images/profile-icon.png';
+import ProfileIcon from '../../../images/profile-icon.svg';
 
 export const ChatHeader: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import aloneUser from '../../../images/alone-user.png';
+import aloneUser from '../../../images/alone-user.svg';
 import { Header4 } from '../../atoms/Typography';
 
 interface NoUsersMessageProps {

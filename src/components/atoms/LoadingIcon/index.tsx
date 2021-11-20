@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import loadingIcon from '../../../images/loading-icon.png';
+import loadingIcon from '../../../images/loading-icon.svg';
 
 export const LoadingIcon: React.FC = () => {
   return (
