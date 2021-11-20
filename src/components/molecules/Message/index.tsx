@@ -17,10 +17,6 @@ export const Message: React.FC<Messages> = ({
 }) => {
   const classes = cn(source, 'message');
 
-  if (text === '' && size === undefined) {
-    return null;
-  }
-
   return (
     <div className={classes}>
       {attached ? (
