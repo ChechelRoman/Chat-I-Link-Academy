@@ -33,6 +33,7 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
 
       if (uploadStatus === 'uploading') {
         alert('File is uploading!');
+        return;
       }
 
       if (isAttached) {
