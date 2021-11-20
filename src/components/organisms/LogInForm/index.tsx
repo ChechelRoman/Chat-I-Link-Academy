@@ -55,9 +55,10 @@ export const LogInForm: React.FC = () => {
 
       if (response.status !== 400) {
         const data = response.data;
-        localStorage.setItem('connect_key', data);
-        // auth.logIn(data);
-        history.push('./chat');
+        auth.logIn(data);
+        if (auth.isAuth()) {
+          history.push('./chat');
+        }
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {
