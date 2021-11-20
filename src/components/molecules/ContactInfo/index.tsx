@@ -3,35 +3,27 @@ import './style.scss';
 import { UserAvatar } from '../../atoms/UserAvatar';
 import { Header4, Text2 } from '../../atoms/Typography';
 import cn from 'classnames';
+import { shortenMessage } from '../../../utils/shortenMessage';
 
-interface ContactInfoProps {
+export interface ContactInfoProps {
+  title?: string;
   isActive: boolean;
-  id: string;
+  id?: string;
   gender: string;
   contactName: string;
-  // lastMessage: string;
-  // source: string;
+  lastMessage?: string;
+  source?: string;
   onClick: (currentChatId: string) => void;
 }
 
-const shortenMessage = (message: string) => {
-  let result = '';
-  if (message.length > 25) {
-    result += `${message.slice(0, 23)}...`;
-  } else {
-    return message;
-  }
-
-  return result;
-};
-
 export const ContactInfo: React.FC<ContactInfoProps> = ({
+  title,
   id,
   gender,
   contactName,
-  // lastMessage,
+  lastMessage,
   isActive,
-  // source,
+  source,
   onClick,
 }) => {
   const classes = cn('contact-item', {
@@ -39,7 +31,9 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({
   });
 
   const handleItemClick = () => {
-    onClick(id);
+    if (id) {
+      onClick(id);
+    }
   };
 
   return (
@@ -47,14 +41,16 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({
       <UserAvatar gender={gender} />
       <div className="info">
         <Header4>{contactName}</Header4>
-        {/* {source === 'outcoming' ? (
+        {source === 'outcoming' ? (
           <Text2>
             <span>You: </span>
-            {shortenMessage(lastMessage)}
+            {!lastMessage ? shortenMessage(title) : shortenMessage(lastMessage)}
           </Text2>
         ) : (
-          <Text2>{shortenMessage(lastMessage)}</Text2>
-        )} */}
+          <Text2>
+            {!lastMessage ? shortenMessage(title) : shortenMessage(lastMessage)}
+          </Text2>
+        )}
       </div>
     </div>
   );
