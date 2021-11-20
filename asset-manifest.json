@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/Chatik/static/css/main.603f3df6.chunk.css",
+    "main.js": "/Chatik/static/js/main.a01d6e4d.chunk.js",
+    "main.js.map": "/Chatik/static/js/main.a01d6e4d.chunk.js.map",
+    "runtime-main.js": "/Chatik/static/js/runtime-main.04f157bf.js",
+    "runtime-main.js.map": "/Chatik/static/js/runtime-main.04f157bf.js.map",
+    "static/js/2.25f8267f.chunk.js": "/Chatik/static/js/2.25f8267f.chunk.js",
+    "static/js/2.25f8267f.chunk.js.map": "/Chatik/static/js/2.25f8267f.chunk.js.map",
+    "index.html": "/Chatik/index.html",
+    "static/css/main.603f3df6.chunk.css.map": "/Chatik/static/css/main.603f3df6.chunk.css.map",
+    "static/js/2.25f8267f.chunk.js.LICENSE.txt": "/Chatik/static/js/2.25f8267f.chunk.js.LICENSE.txt",
+    "static/media/alone-user.f7a533b7.svg": "/Chatik/static/media/alone-user.f7a533b7.svg",
+    "static/media/attach-icon.ff8ff9bf.svg": "/Chatik/static/media/attach-icon.ff8ff9bf.svg",
+    "static/media/attached-file-icon-1.cf687aac.svg": "/Chatik/static/media/attached-file-icon-1.cf687aac.svg",
+    "static/media/attached-file-icon-2.e8f700d0.svg": "/Chatik/static/media/attached-file-icon-2.e8f700d0.svg",
+    "static/media/back-arrow-icon.139af588.svg": "/Chatik/static/media/back-arrow-icon.139af588.svg",
+    "static/media/style.scss": "/Chatik/static/media/mobile-chat-background.5ae37dec.png",
+    "static/media/dropdown-arrow.6d3f84ad.svg": "/Chatik/static/media/dropdown-arrow.6d3f84ad.svg",
+    "static/media/error-icon.dd5c433f.svg": "/Chatik/static/media/error-icon.dd5c433f.svg",
+    "static/media/female-user-icon.9fe512a0.svg": "/Chatik/static/media/female-user-icon.9fe512a0.svg",
+    "static/media/loading-icon.44373d9b.svg": "/Chatik/static/media/loading-icon.44373d9b.svg",
+    "static/media/logo.8144ace5.svg": "/Chatik/static/media/logo.8144ace5.svg",
+    "static/media/male-user-icon.884cf237.svg": "/Chatik/static/media/male-user-icon.884cf237.svg",
+    "static/media/profile-icon.73c6e802.svg": "/Chatik/static/media/profile-icon.73c6e802.svg",
+    "static/media/refresh-captcha-icon.4a978d34.svg": "/Chatik/static/media/refresh-captcha-icon.4a978d34.svg",
+    "static/media/send-icon.e8e9d77f.svg": "/Chatik/static/media/send-icon.e8e9d77f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.04f157bf.js",
+    "static/js/2.25f8267f.chunk.js",
+    "static/css/main.603f3df6.chunk.css",
+    "static/js/main.a01d6e4d.chunk.js"
+  ]
+}
