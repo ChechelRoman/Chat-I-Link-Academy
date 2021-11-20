@@ -12,11 +12,12 @@ import axios from 'axios';
 
 interface ChatBodySendMenuProps {
   socket: WebSocket;
-  chatId?: string;
+  id?: string;
+  name: string;
 }
 
 export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
-  ({ chatId, socket }) => {
+  ({ id, socket, name }) => {
     const [inputValue, setInputValue] = useState<string>('');
     const [uploadStatus, setUploadStatus] = useState<string>('no-upload');
     const [file, setFile] = useState<File | undefined>(undefined);
@@ -52,12 +53,15 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
             type: 'message',
             data: {
               message: inputValue,
-              filelink: `http://109.194.37.212:93${link}`,
-              targetId: chatId,
+              fileSize: file?.size,
+              fileName: file?.name,
+              fileLink: `http://109.194.37.212:93${link}`,
+              recieverId: id,
+              recieverName: name,
             },
           })}'`
         );
-        chats.addMessage(chatId, message);
+        chats.addMessage(id, message);
         setFile(undefined);
         setInputValue('');
         setUploadStatus('no-upload');
@@ -74,10 +78,10 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
         socket.send(
           `'${JSON.stringify({
             type: 'message',
-            data: { message: inputValue, targetId: chatId },
+            data: { message: inputValue, recieverId: id, recieverName: name },
           })}'`
         );
-        chats.addMessage(chatId, message);
+        chats.addMessage(id, message);
         setInputValue('');
       }
     };
