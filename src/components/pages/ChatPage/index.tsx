@@ -8,23 +8,15 @@ import { NoUsersMessage } from '../../molecules/NoUsersMessage';
 import { LoadingIcon } from '../../atoms/LoadingIcon';
 import { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
-// import { emptyResponse } from './mocks';
+import chats from '../../../store/chats';
+import { observer } from 'mobx-react-lite';
 
 const websocket = new WebSocket(
-  `ws://109.194.37.212:2346/?type=test&ws_id=${localStorage.getItem(
-    'connect_key'
-  )}`
+  `ws://109.194.37.212:2346/?type=test&ws_id=${localStorage.getItem('user')}`
 );
 
-export interface UserList {
-  name: string;
-  gender: string;
-}
-
-export const ChatPage: React.FC = () => {
-  const [list, setList] = useState<UserList[]>([]);
+export const ChatPage: React.FC = observer(() => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  // const [currentChatId, setcurrentChatId] = useState<string>('empty');
   const history = useHistory();
   const { id } = useParams<{ id: string }>();
 
@@ -48,24 +40,23 @@ export const ChatPage: React.FC = () => {
       websocket.send(JSON.stringify({ type: 'users_list' }));
       websocket.onmessage = (msg) => {
         const list = JSON.parse(msg.data);
-        setList(list.data);
+        chats.addChats(list.data);
       };
     }
   }, [isOpened]);
-
-  // const response = emptyResponse;
 
   if (!isOpened) {
     return (
       <ChatTemplate
         header={<ChatHeader />}
         chatBody={<LoadingIcon />}
+        contactsBar={<LoadingIcon />}
         isActive={id}
       />
     );
   }
 
-  if (isOpened && list.length === 0) {
+  if (isOpened && chats.chats.length === 0) {
     return (
       <ChatTemplate
         header={<ChatHeader />}
@@ -77,32 +68,13 @@ export const ChatPage: React.FC = () => {
     );
   }
 
-  // if (response.length === 0) {
-  //   return (
-  //     <ChatTemplate
-  //       header={<ChatHeader />}
-  //       contactsBar={
-  //         <NoUsersMessage description="There is no other users yet" />
-  //       }
-  //       isActive={currentChatId}
-  //     />
-  //   );
-  // }
-
   return (
     <ChatTemplate
-      contactsBar={
-        <Contacts
-          chats={list}
-          // onClick={setcurrentChatId}
-          onClick={handleClickChat}
-          currentChatId={id}
-        />
-      }
+      contactsBar={<Contacts onClick={handleClickChat} currentChatId={id} />}
       header={<ChatHeader />}
       chatBody={
         <ChatBody
-          chats={list}
+          socket={websocket}
           currentChatId={id}
           onClick={handleClickBackward}
         />
@@ -110,4 +82,4 @@ export const ChatPage: React.FC = () => {
       isActive={id}
     />
   );
-};
+});
