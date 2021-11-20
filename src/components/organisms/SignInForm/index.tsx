@@ -6,9 +6,9 @@ import { Button } from '../../atoms/Button';
 import { Header1, Header2 } from '../../atoms/Typography';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useHistory } from 'react-router';
-import { capitalize } from './utils';
-import dropdownArrow from '../../../images/dropdown-arrow.png';
-import refreshCaptchaIcon from '../../../images/refresh-captcha-icon.png';
+import { capitalize } from '../../../utils/capitalize';
+import dropdownArrow from '../../../images/dropdown-arrow.svg';
+import refreshCaptchaIcon from '../../../images/refresh-captcha-icon.svg';
 import cn from 'classnames';
 import axios from 'axios';
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import maleIcon from './../../../images/male-user-icon.png';
-import femaleIcon from './../../../images/female-user-icon.png';
+import maleIcon from './../../../images/male-user-icon.svg';
+import femaleIcon from './../../../images/female-user-icon.svg';
 import './style.scss';
 
 interface UserAvatarProps {

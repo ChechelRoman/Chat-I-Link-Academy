@@ -8,8 +8,10 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useHistory } from 'react-router';
 import { useState } from 'react';
 import cn from 'classnames';
-import refreshCaptchaIcon from '../../../images/refresh-captcha-icon.png';
+import refreshCaptchaIcon from '../../../images/refresh-captcha-icon.svg';
 import axios from 'axios';
+
+import { useAuth } from '../../../hooks';
 
 interface LogInInputs {
   login: string;
@@ -19,6 +21,7 @@ interface LogInInputs {
 
 export const LogInForm: React.FC = () => {
   const [dateNow, setDateNow] = useState<number>(Date.now);
+  const auth = useAuth();
 
   const {
     register,
@@ -53,6 +56,7 @@ export const LogInForm: React.FC = () => {
       if (response.status !== 400) {
         const data = response.data;
         localStorage.setItem('connect_key', data);
+        // auth.logIn(data);
         history.push('./chat');
       }
     } catch (error) {
