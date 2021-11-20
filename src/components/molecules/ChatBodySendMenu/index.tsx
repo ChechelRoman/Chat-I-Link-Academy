@@ -7,6 +7,7 @@ import { Messages } from '../../../store/chats';
 import chats from '../../../store/chats';
 import { observer } from 'mobx-react-lite';
 import { uniqueId } from 'lodash';
+import { validateFile } from '../../../utils/validateFile';
 import axios from 'axios';
 
 interface ChatBodySendMenuProps {
@@ -86,22 +87,25 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
         const file = event.target.files[0];
         const formData = new FormData();
         formData.append('0', file);
-        try {
-          setUploadStatus('uploading');
-          const response = await axios.post<string>(
-            'http://109.194.37.212:93/api/upload',
-            formData
-          );
-          if (response.status !== 400) {
-            const data = response.data;
-            setFile(file);
-            setLink(data);
-            setUploadStatus('uploaded');
-          }
-        } catch (error) {
-          if (axios.isAxiosError(error)) {
-            setUploadStatus('no-upload');
-            alert(error.response?.data);
+        const isFileValid = validateFile(file.type, file.size);
+        if (isFileValid) {
+          try {
+            setUploadStatus('uploading');
+            const response = await axios.post<string>(
+              'http://109.194.37.212:93/api/upload',
+              formData
+            );
+            if (response.status !== 400) {
+              const data = response.data;
+              setFile(file);
+              setLink(data);
+              setUploadStatus('uploaded');
+            }
+          } catch (error) {
+            if (axios.isAxiosError(error)) {
+              setUploadStatus('no-upload');
+              alert(error.response?.data);
+            }
           }
         }
       }
