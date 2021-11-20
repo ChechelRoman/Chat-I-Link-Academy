@@ -19,7 +19,7 @@ export interface Messages {
   link?: string;
 }
 
-const timeArray = ['10', '9', '8', '7', '6', '5', '4', '3', '2'];
+const lastSeenColl = ['10', '9', '8', '7', '6', '5', '4', '3', '2'];
 
 class Chats {
   chats: UserInfo[] = [];
@@ -30,10 +30,10 @@ class Chats {
 
   addChats(userList: UserInfo[]) {
     const response: UserInfo[] = [...userList];
-    response.forEach((item) => {
-      item.id = uniqueId();
-      item.lastSeen = sample(timeArray);
-      item.messages = [];
+    response.forEach((user) => {
+      user.id = uniqueId();
+      user.lastSeen = sample(lastSeenColl);
+      user.messages = [];
     });
     this.chats = [...response];
   }
