@@ -19,7 +19,7 @@ export const validateFile = (type: string, size: number) => {
   }
 
   if (size / 1048576 >= 2) {
-    alert('This file exceeds size limit! Try file that weight less than 2 mb.');
+    alert('This file exceeds size limit! Try file that weighs less than 2 mb.');
     return false;
   }
 
