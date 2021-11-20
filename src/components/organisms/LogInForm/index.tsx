@@ -57,7 +57,7 @@ export const LogInForm: React.FC = () => {
         const data = response.data;
         auth.logIn(data);
         if (auth.isAuth()) {
-          history.push('./chat');
+          history.replace('./chat');
         }
       }
     } catch (error) {
