@@ -8,6 +8,7 @@ import chats from '../../../store/chats';
 import { observer } from 'mobx-react-lite';
 import { uniqueId } from 'lodash';
 import { validateFile } from '../../../utils/validateFile';
+import { onMessageHandler } from '../../pages/ChatPage';
 import axios from 'axios';
 
 interface ChatBodySendMenuProps {
@@ -29,6 +30,7 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
+      socket.removeEventListener('message', onMessageHandler);
       const isAttached = file === undefined ? false : true;
 
       if (uploadStatus === 'uploading') {

@@ -15,6 +15,11 @@ const websocket = new WebSocket(
   `ws://109.194.37.212:2346/?type=test&ws_id=${localStorage.getItem('user')}`
 );
 
+export function onMessageHandler(message: MessageEvent<any>) {
+  const list = JSON.parse(message.data);
+  chats.addChats(list.data);
+}
+
 export const ChatPage: React.FC = observer(() => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const history = useHistory();
@@ -28,6 +33,11 @@ export const ChatPage: React.FC = observer(() => {
     history.push('/chat');
   };
 
+  const addUsersListFromServer = () => {
+    websocket.send(JSON.stringify({ type: 'users_list' }));
+    websocket.addEventListener('message', onMessageHandler);
+  };
+
   useEffect(() => {
     websocket.onopen = () => setIsOpened(true);
     websocket.onclose = () => setIsOpened(false);
@@ -37,11 +47,7 @@ export const ChatPage: React.FC = observer(() => {
   useEffect(() => {
     if (websocket.readyState === 1) {
       setIsOpened(true);
-      websocket.send(JSON.stringify({ type: 'users_list' }));
-      websocket.onmessage = (msg) => {
-        const list = JSON.parse(msg.data);
-        chats.addChats(list.data);
-      };
+      addUsersListFromServer();
     }
   }, [isOpened]);
 
