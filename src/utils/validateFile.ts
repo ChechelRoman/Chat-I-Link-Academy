@@ -6,7 +6,8 @@ const fileExtensions = [
   'audio/ogg',
   'image/jpeg',
   'image/jpg',
-  'image/gif, image/png',
+  'image/gif',
+  'image/png',
   'image/svg+xml',
 ];
 
