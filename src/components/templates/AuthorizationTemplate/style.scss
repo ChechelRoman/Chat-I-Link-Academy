@@ -46,6 +46,10 @@
   
           .form-field {
             margin-bottom: 0px;
+
+            &__captcha {
+              width: unset;
+            }
           }
   
           .login-logo {
@@ -115,6 +119,10 @@
   
           .form-field {
             margin-bottom: 0px;
+
+            &__captcha {
+              width: unset;
+            }
           }
   
           .login-logo {
