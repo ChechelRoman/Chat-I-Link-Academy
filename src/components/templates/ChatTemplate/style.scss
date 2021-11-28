@@ -45,7 +45,7 @@
 @media screen and (max-width: 375px) {
   .chat-template {
     width: 375px;
-    height: 717px;
+    // height: 717px;
 
     .chosen {
       .header {
@@ -91,7 +91,7 @@
           }
   
           .alone-user {
-            padding: 175px 88px 24px 88px;
+            padding: 175px 0px 0px 88px;
           }
   
           .header4 {

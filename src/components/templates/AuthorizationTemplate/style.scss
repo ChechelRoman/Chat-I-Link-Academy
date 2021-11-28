@@ -1,5 +1,5 @@
 .container {
-  height: 1080px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   .authorization-page-template {
@@ -8,18 +8,18 @@
   
     &__left {
       .login-form-container {
-        margin: 256px 145px 315px 121px;
+        margin: 15vh 145px 315px 121px;
       }
 
       .sign-form-container {
-        margin: 63px 183px 63px 121px;
+        margin: 1vh 183px 63px 121px;
       }
     }
   
     &__right {
       background-image: url(../../../images/login-decor.png);
       background-size: 100% 100%;
-      height: 1080px;
+      height: 100vh;
       width: 724px;
       background-color: #EFF5FF;
     }

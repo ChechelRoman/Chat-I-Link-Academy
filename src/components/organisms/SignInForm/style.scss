@@ -1,6 +1,14 @@
 @import '../../_settings/variables';
 
 .sign-form-container {
+  .header1 {
+    margin-bottom: 10px;
+  }
+
+  .header2 {
+    margin-bottom: 20px;
+  }
+
   .header-blue {
     color: #5E93E7;
   }
@@ -13,7 +21,7 @@
     font-size: 13px;
     line-height: 19px;
     width: 354px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
     &__captcha {
       display: flex;
