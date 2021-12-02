@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Chatik/static/css/main.603f3df6.chunk.css",
-    "main.js": "/Chatik/static/js/main.1a90d1db.chunk.js",
-    "main.js.map": "/Chatik/static/js/main.1a90d1db.chunk.js.map",
+    "main.css": "/Chatik/static/css/main.07d9eb9f.chunk.css",
+    "main.js": "/Chatik/static/js/main.96faf527.chunk.js",
+    "main.js.map": "/Chatik/static/js/main.96faf527.chunk.js.map",
     "runtime-main.js": "/Chatik/static/js/runtime-main.04f157bf.js",
     "runtime-main.js.map": "/Chatik/static/js/runtime-main.04f157bf.js.map",
     "static/js/2.25f8267f.chunk.js": "/Chatik/static/js/2.25f8267f.chunk.js",
     "static/js/2.25f8267f.chunk.js.map": "/Chatik/static/js/2.25f8267f.chunk.js.map",
     "index.html": "/Chatik/index.html",
-    "static/css/main.603f3df6.chunk.css.map": "/Chatik/static/css/main.603f3df6.chunk.css.map",
+    "static/css/main.07d9eb9f.chunk.css.map": "/Chatik/static/css/main.07d9eb9f.chunk.css.map",
     "static/js/2.25f8267f.chunk.js.LICENSE.txt": "/Chatik/static/js/2.25f8267f.chunk.js.LICENSE.txt",
     "static/media/alone-user.f7a533b7.svg": "/Chatik/static/media/alone-user.f7a533b7.svg",
     "static/media/attach-icon.ff8ff9bf.svg": "/Chatik/static/media/attach-icon.ff8ff9bf.svg",
     "static/media/attached-file-icon-1.cf687aac.svg": "/Chatik/static/media/attached-file-icon-1.cf687aac.svg",
     "static/media/attached-file-icon-2.e8f700d0.svg": "/Chatik/static/media/attached-file-icon-2.e8f700d0.svg",
     "static/media/back-arrow-icon.139af588.svg": "/Chatik/static/media/back-arrow-icon.139af588.svg",
-    "static/media/style.scss": "/Chatik/static/media/mobile-chat-background.5ae37dec.png",
+    "static/media/style.scss": "/Chatik/static/media/mobile-login-decor.d56ed56e.svg",
     "static/media/dropdown-arrow.6d3f84ad.svg": "/Chatik/static/media/dropdown-arrow.6d3f84ad.svg",
     "static/media/error-icon.dd5c433f.svg": "/Chatik/static/media/error-icon.dd5c433f.svg",
     "static/media/female-user-icon.9fe512a0.svg": "/Chatik/static/media/female-user-icon.9fe512a0.svg",
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.04f157bf.js",
     "static/js/2.25f8267f.chunk.js",
-    "static/css/main.603f3df6.chunk.css",
-    "static/js/main.1a90d1db.chunk.js"
+    "static/css/main.07d9eb9f.chunk.css",
+    "static/js/main.96faf527.chunk.js"
   ]
 }
