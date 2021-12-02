@@ -4,7 +4,7 @@ import { Text1, Text2 } from '../../atoms/Typography';
 import cn from 'classnames';
 import attachedIcon1 from '../../../images/attached-file-icon-1.svg';
 import attachedIcon2 from '../../../images/attached-file-icon-2.svg';
-import { Messages } from '../../../store/chats';
+import { Messages } from '../../../store/chatsStore';
 import { formatFileSize } from '../../../utils/formatFileSize';
 
 export const Message: React.FC<Messages> = ({

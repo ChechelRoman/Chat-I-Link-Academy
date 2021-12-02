@@ -21,7 +21,7 @@ export interface Messages {
 
 const lastSeenColl = ['10', '9', '8', '7', '6', '5', '4', '3', '2'];
 
-class Chats {
+class ChatsStore {
   chats: UserInfo[] = [];
 
   constructor() {
@@ -47,4 +47,4 @@ class Chats {
   }
 }
 
-export default new Chats();
+export default new ChatsStore();

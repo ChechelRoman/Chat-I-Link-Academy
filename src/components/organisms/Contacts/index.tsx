@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import { ContactInfo } from '../../molecules/ContactInfo';
 
-import chats from '../../../store/chats';
+import chats from '../../../store/chatsStore';
 import { observer } from 'mobx-react-lite';
 
 interface ContactsProps {

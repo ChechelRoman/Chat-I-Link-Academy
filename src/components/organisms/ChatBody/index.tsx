@@ -7,7 +7,7 @@ import {
 import { Message } from '../../molecules/Message';
 import { ChatBodySendMenu } from '../../molecules/ChatBodySendMenu';
 import { Header4 } from '../../atoms/Typography';
-import chats from '../../../store/chats';
+import chatsStore from '../../../store/chatsStore';
 import { observer } from 'mobx-react-lite';
 
 interface ChatBodyProps {
@@ -26,7 +26,7 @@ export const ChatBody: React.FC<ChatBodyProps> = observer(
       );
     }
 
-    const activeChat = chats.chats.filter(
+    const activeChat = chatsStore.chats.filter(
       (chat) => chat.id === currentChatId
     )[0];
 

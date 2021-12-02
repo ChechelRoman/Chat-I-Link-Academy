@@ -8,7 +8,7 @@ import { NoUsersMessage } from '../../molecules/NoUsersMessage';
 import { LoadingIcon } from '../../atoms/LoadingIcon';
 import { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
-import chats from '../../../store/chats';
+import chatsStore from '../../../store/chatsStore';
 import { observer } from 'mobx-react-lite';
 
 const websocket = new WebSocket(
@@ -17,7 +17,7 @@ const websocket = new WebSocket(
 
 export function onMessageHandler(message: MessageEvent<any>) {
   const list = JSON.parse(message.data);
-  chats.addChats(list.data);
+  chatsStore.addChats(list.data);
 }
 
 export const ChatPage: React.FC = observer(() => {
@@ -39,6 +39,7 @@ export const ChatPage: React.FC = observer(() => {
   };
 
   useEffect(() => {
+    document.title = 'Chat';
     websocket.onopen = () => setIsOpened(true);
     websocket.onclose = () => setIsOpened(false);
     websocket.onerror = (error) => console.log(error);
@@ -62,7 +63,7 @@ export const ChatPage: React.FC = observer(() => {
     );
   }
 
-  if (isOpened && chats.chats.length === 0) {
+  if (isOpened && chatsStore.chats.length === 0) {
     return (
       <ChatTemplate
         header={<ChatHeader />}

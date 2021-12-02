@@ -3,8 +3,8 @@ import './style.scss';
 import { useState } from 'react';
 import sendIcon from '../../../images/send-icon.svg';
 import attachIcon from '../../../images/attach-icon.svg';
-import { Messages } from '../../../store/chats';
-import chats from '../../../store/chats';
+import { Messages } from '../../../store/chatsStore';
+import chatsStore from '../../../store/chatsStore';
 import { observer } from 'mobx-react-lite';
 import { uniqueId } from 'lodash';
 import { validateFile } from '../../../utils/validateFile';
@@ -31,16 +31,16 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       socket.removeEventListener('message', onMessageHandler);
-      const isAttached = file === undefined ? false : true;
+      const isFileAttached = file === undefined ? false : true;
 
       if (uploadStatus === 'uploading') {
         alert('File is uploading!');
         return;
       }
 
-      if (isAttached) {
+      if (isFileAttached) {
         const message: Messages = {
-          attached: isAttached,
+          attached: isFileAttached,
           id: uniqueId(),
           source: 'outcoming',
           text: inputValue,
@@ -64,13 +64,13 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
             },
           })}'`
         );
-        chats.addMessage(id, message);
+        chatsStore.addMessage(id, message);
         setFile(undefined);
         setInputValue('');
         setUploadStatus('no-upload');
       } else {
         const message: Messages = {
-          attached: isAttached,
+          attached: isFileAttached,
           id: uniqueId(),
           source: 'outcoming',
           text: inputValue,
@@ -84,7 +84,7 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
             data: { message: inputValue, recieverId: id, recieverName: name },
           })}'`
         );
-        chats.addMessage(id, message);
+        chatsStore.addMessage(id, message);
         setInputValue('');
       }
     };
