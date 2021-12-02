@@ -26,7 +26,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({
   source,
   onClick,
 }) => {
-  const classes = cn('contact-item', {
+  const classes = cn('contact_item', {
     active: isActive,
   });
 

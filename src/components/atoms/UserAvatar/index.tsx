@@ -10,9 +10,9 @@ interface UserAvatarProps {
 export const UserAvatar: React.FC<UserAvatarProps> = ({ gender }) => {
   switch (gender) {
     case 'male':
-      return <img src={maleIcon} className="user-avatar" alt="male" />;
+      return <img src={maleIcon} className="user_avatar" alt="male" />;
     case 'female':
-      return <img src={femaleIcon} className="user-avatar" alt="female" />;
+      return <img src={femaleIcon} className="user_avatar" alt="female" />;
     default:
       return null;
   }

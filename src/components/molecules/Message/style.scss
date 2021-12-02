@@ -13,27 +13,27 @@
     color: #303030;
   }
 
-  .file-container {
+  .file_container {
     display: flex;
     position: relative;
     justify-content: flex-end;
   
-    .icon-container {
+    .icon_container {
       padding: 16px 12px 16px 16px;
   
-      .attach-icon-1 {
+      .attach_icon_1 {
         width: 24px;
         height: 31px;
       }
   
-      .attach-icon-2  {
+      .attach_icon_2  {
         width: 5px;
         height: 5px;
         padding-bottom: 25px;
       }
     }
   
-    .file-info-container {
+    .file_info_container {
       padding: 12px 22px 12px 0px;
   
       .text1 {

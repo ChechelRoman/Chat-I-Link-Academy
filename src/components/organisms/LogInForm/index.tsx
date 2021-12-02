@@ -37,7 +37,7 @@ export const LogInForm: React.FC = () => {
     invalid: errors.password,
   });
 
-  const captchaInputclasses = cn('captcha-input', {
+  const captchaInputclasses = cn('captcha_input', {
     invalid: errors.captcha,
   });
 
@@ -73,18 +73,18 @@ export const LogInForm: React.FC = () => {
   };
 
   return (
-    <div className="login-form-container">
-      <Logo type="login-logo" />
+    <div className="login_form_container">
+      <Logo type="login_logo" />
       <Header1>
-        Welcome to <span className="header-blue">Chatty</span>
-        <span className="header-grey">!</span>
+        Welcome to <span className="header_blue">Chatty</span>
+        <span className="header_grey">!</span>
       </Header1>
       <Header2>Please, authorize yourself</Header2>
       <form action="post" onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-field">
+        <div className="form_field">
           <label>
-            <span className="form-field__label">User name</span>
-            <div className="form-field__input">
+            <span className="form_field__label">User name</span>
+            <div className="form_field__input">
               <input
                 {...register('login', { required: true })}
                 className={loginInputclasses}
@@ -93,15 +93,15 @@ export const LogInForm: React.FC = () => {
               {errors.login ? <ErrorIcon /> : null}
             </div>
           </label>
-          <span className="form-field__error">
+          <span className="form_field__error">
             {errors.login && 'Login is required'}
           </span>
         </div>
 
-        <div className="form-field">
+        <div className="form_field">
           <label>
-            <span className="form-field__label">Password</span>
-            <div className="form-field__input">
+            <span className="form_field__label">Password</span>
+            <div className="form_field__input">
               <input
                 {...register('password', { required: true })}
                 className={passwordInputclasses}
@@ -111,17 +111,17 @@ export const LogInForm: React.FC = () => {
               {errors.password ? <ErrorIcon /> : null}
             </div>
           </label>
-          <span className="form-field__error">
+          <span className="form_field__error">
             {errors.password && 'Password is required'}
           </span>
         </div>
 
-        <div className="form-field">
-          <div className="form-field__captcha">
-            <div className="input-container">
+        <div className="form_field">
+          <div className="form_field__captcha">
+            <div className="input_container">
               <label>
-                <span className="form-field__label">Security code</span>
-                <div className="form-field__input">
+                <span className="form_field__label">Security code</span>
+                <div className="form_field__input">
                   <input
                     {...register('captcha', { required: true })}
                     className={captchaInputclasses}
@@ -130,14 +130,14 @@ export const LogInForm: React.FC = () => {
                   {errors.captcha ? <ErrorIcon /> : null}
                 </div>
               </label>
-              <span className="form-field__error">
+              <span className="form_field__error">
                 {errors.captcha && 'Captcha is wrong'}
               </span>
             </div>
-            <div className="captcha-container">
+            <div className="captcha_container">
               <img src={src} className="captcha" alt="captcha" />
               <img
-                className="refresh-icon"
+                className="refresh_icon"
                 src={refreshCaptchaIcon}
                 alt="refresh captcha icon"
                 onClick={handleCaptchaRefresh}

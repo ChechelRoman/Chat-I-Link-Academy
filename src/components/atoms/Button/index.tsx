@@ -26,7 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const classes = cn({
-    'submit-button': type === 'submit',
+    submit_button: type === 'submit',
     button: type === 'button',
   });
 

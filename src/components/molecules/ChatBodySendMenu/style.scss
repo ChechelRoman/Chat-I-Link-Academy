@@ -3,7 +3,7 @@
 form {
   height: 100%;
 
-  .send-menu {
+  .send_menu {
     height: 100%;
     width: 100%;
     background-color: #FFFFFF;
@@ -11,9 +11,9 @@ form {
     justify-content: space-between;
     position: relative;
   
-    .send-menu__label {
+    .send_menu__label {
   
-      .send-menu__attach-icon {
+      .send_menu__attach_icon {
         width: 22px;
         height: 22px;
         padding-top: 30px;
@@ -21,14 +21,14 @@ form {
         cursor: pointer;
       }
   
-      .send-menu__file-input {
+      .send_menu__file_input {
         width: 0px;
         height: 0px;
         opacity: 0;
       }
     }
   
-    .send-menu__text-input {
+    .send_menu__text_input {
       box-sizing: border-box;
       border: none;
       height: 100%;
@@ -47,7 +47,7 @@ form {
       }
     }
   
-    &__submit-button {
+    &__submit_button {
       position: absolute;
       height: 25px;
       width: 30px;
@@ -58,7 +58,7 @@ form {
       cursor: pointer;
     }
   
-    .send-menu__send-icon {
+    .send_menu__send_icon {
       width: 24px;
       height: 21px;
       padding-top: 30px;

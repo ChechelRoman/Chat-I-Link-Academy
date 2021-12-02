@@ -1,7 +1,7 @@
-.chat-template {
+.chat_template {
   height: 100vh;
 
-  .header-wrapper {
+  .header_wrapper {
     height: 80px;
 
     .header {
@@ -16,25 +16,25 @@
 
 
 
-  .content-wrapper {
+  .content_wrapper {
     display: flex;
     height: calc(100% - 80px);
     width: 100%;
 
-    .contacts-wrapper {
+    .contacts_wrapper {
       width: 362px;
-      .contacts-bar {
+      .contacts_bar {
         height: 100%;
         box-sizing: border-box;
         border-right: 1px solid #88ABE3;
   
-        .loading-icon-container {
+        .loading_icon_container {
           display: none;
         }
       }
     }
 
-    .main-wrapper {
+    .main_wrapper {
       width: calc(100% - 362px);
       height: 100%;
 
@@ -53,16 +53,16 @@
 
 
 @media screen and (max-width: 1024px) {
-  .chat-template {
+  .chat_template {
 
-    .content-wrapper {
+    .content_wrapper {
 
-      .contacts-wrapper {
+      .contacts_wrapper {
         width: 300px;
 
-        .contacts-bar {
+        .contacts_bar {
 
-          .contact-item {
+          .contact_item {
 
             .info {
 
@@ -81,17 +81,17 @@
         }
       }
 
-      .main-wrapper {
+      .main_wrapper {
         width: calc(100% - 300px);
 
-        .chat-body {
+        .chat_body {
 
           &__header {
             height: 90px;
 
-            .contact-header {
+            .contact_header {
 
-              .info-wrapper {
+              .info_wrapper {
     
                 .header3 {
                   font-size: 19px;
@@ -116,9 +116,9 @@
                 line-height: 19px;
               }
 
-              .file-container {
+              .file_container {
 
-                .file-info-container {
+                .file_info_container {
 
                   .text2 {
                     font-size: 13px;
@@ -129,25 +129,25 @@
             }
           }
 
-          &__send-menu {
+          &__send_menu {
             height: 70px;
 
-            .send-menu__text-input {
+            .send_menu__text_input {
               font-size: 15px;
               line-height: 19px;
             }
 
-            .send-menu__attach-icon {
+            .send_menu__attach_icon {
               padding-top: 25px;
               padding-left: 25px;
             }
 
-            .send-menu__send-icon {
+            .send_menu__send_icon {
               padding-top: 25px;
               padding-right: 25px;
             }
 
-            .send-menu__submit-button {
+            .send_menu__submit_button {
               top: 24px;
               right: 24px;
             }
@@ -159,11 +159,11 @@
 }
 
 @media screen and (max-width: 834px) {
-  .chat-template {
+  .chat_template {
 
-    .content-wrapper {
+    .content_wrapper {
 
-      .contacts-wrapper {
+      .contacts_wrapper {
         width: 280px;
 
         .info {
@@ -171,7 +171,7 @@
         }
       }
 
-      .main-wrapper {
+      .main_wrapper {
         width: calc(100% - 280px);
       }
     }
@@ -179,7 +179,7 @@
 }
 
 @media screen and (max-width: 428px) {
-  .chat-template {
+  .chat_template {
     width: 100%;
     height: auto;
 
@@ -189,7 +189,7 @@
       }
     }
 
-    .header-wrapper {
+    .header_wrapper {
       width: 100%;
       min-height: unset;
       height: unset;
@@ -197,13 +197,13 @@
         height: 64px;
         border-color: #D7E6FF;
   
-        .chat-logo {
+        .chat_logo {
           width: 63px;
           height: 22px;
           padding: 18px 0px 23px 14px;
         }
   
-        .profile-icon {
+        .profile_icon {
           width: 36px;
           height: 36px;
           padding: 14px 13px 14px 0px;
@@ -211,28 +211,28 @@
       }
     }
 
-    .content-wrapper {
+    .content_wrapper {
       height: 100%;
       width: 100%;
       display: block;
 
-      .contacts-wrapper {
+      .contacts_wrapper {
         width: 100%;
         min-width: unset;
-        .contacts-bar {
+        .contacts_bar {
           width: 100%;
           border-right: none;
           padding-top: 22px;
 
-          .loading-icon-container {
+          .loading_icon_container {
             display: flex;
             margin-top: 50%;
             margin-left: 40%;
           }
 
-          .no-user-message {
+          .no_user_message {
             padding-left: 23%;
-            .alone-user {
+            .alone_user {
               padding: 0;
               padding-top: 30%;
             }
@@ -248,7 +248,7 @@
 
 
   
-          .contact-item {
+          .contact_item {
             padding: 10px 0px 10px 14px;
             .info {
               .header4 {
@@ -264,12 +264,12 @@
       }
 
       .chosen {
-        .contacts-bar {
+        .contacts_bar {
           display: none;
         }
       }
 
-      .main-wrapper {
+      .main_wrapper {
         width: unset;
         .main {
           display: none;
@@ -287,15 +287,15 @@
           background-repeat: no-repeat;
           background-position-y: 0px;
 
-          .chat-body {
+          .chat_body {
             &__header {
               height: 72px;
               min-height: unset;
-              .contact-header {
+              .contact_header {
                 display: flex;
                 padding: 0;
 
-                .back-arrow {
+                .back_arrow {
                   display: block;
                   width: 16px;
                   height: 16px;
@@ -303,7 +303,7 @@
                   cursor: pointer;
                 }
 
-                .user-avatar {
+                .user_avatar {
                   display: block;
                   width: 40px;
                   height: 40px;
@@ -334,18 +334,18 @@
                 max-width: 85%;
                 margin-top: 24px;
 
-                .file-container {
-                  .icon-container {
+                .file_container {
+                  .icon_container {
                     position: relative;
                     padding: 14px 12px;
 
-                    .attach-icon-2 {
+                    .attach_icon_2 {
                       position: absolute;
                       top: 14px;
                       left: 31px;
                     }
                   }
-                  .file-info-container {
+                  .file_info_container {
                     .text1 {
                       font-size: 14px;
                       line-height: 17px;
@@ -372,20 +372,20 @@
               }
             }
 
-            &__send-menu {
+            &__send_menu {
               min-height: unset;
               height: 48px;
 
-              .send-menu {
+              .send_menu {
                 &__label {
-                  .send-menu__attach-icon {
+                  .send_menu__attach_icon {
                     width: 16px;
                     height: 17px;
                     padding: 15px 20px 15px 18px;
                   }
                 }
 
-                &__text-input {
+                &__text_input {
                   height: 48px;
                   width: 280px;
                   padding: 16px 0px;
@@ -394,14 +394,14 @@
                   font-weight: 400;
                 }
 
-                &__submit-button {
+                &__submit_button {
                   height: 15px;
                   width: 20px;
                   top: 16px;
                   right: 13px;
                 }
 
-                &__send-icon {
+                &__send_icon {
                   width: 16px;
                   height: 14px;
                   padding: 17px 13px 17px 10px;
@@ -416,7 +416,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .no-user-message {
+  .no_user_message {
     padding-left: 19% !important;
   }
 }

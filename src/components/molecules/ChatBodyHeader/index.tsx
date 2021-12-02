@@ -17,15 +17,15 @@ export const ChatBodyHeader: React.FC<ContactHeaderProps> = ({
   gender,
 }) => {
   return (
-    <div className="contact-header">
+    <div className="contact_header">
       <img
-        className="back-arrow"
+        className="back_arrow"
         src={backArrow}
         alt="back arrow icon"
         onClick={onClick}
       />
       <UserAvatar gender={gender} />
-      <div className="info-wrapper">
+      <div className="info_wrapper">
         <Header3>{contactName}</Header3>
         <Text1>Last seen {lastSeen} minutes ago</Text1>
       </div>

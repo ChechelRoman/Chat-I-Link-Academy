@@ -15,26 +15,26 @@ export const ChatTemplate: React.FC<ChatTemplateProps> = ({
   chatBody,
   isActive,
 }) => {
-  const headerClassnames = cn('header-wrapper', {
+  const headerClassnames = cn('header_wrapper', {
     chosen: isActive,
   });
 
-  const contactsClassnames = cn('contacts-wrapper', {
+  const contactsClassnames = cn('contacts_wrapper', {
     chosen: isActive,
   });
 
-  const mainClassnames = cn('main-wrapper', {
+  const mainClassnames = cn('main_wrapper', {
     chosen: isActive,
   });
 
   return (
-    <div className="chat-template">
+    <div className="chat_template">
       <div className={headerClassnames}>
         <div className="header">{header}</div>
       </div>
-      <div className="content-wrapper">
+      <div className="content_wrapper">
         <div className={contactsClassnames}>
-          <div className="contacts-bar">{contactsBar}</div>
+          <div className="contacts_bar">{contactsBar}</div>
         </div>
         <div className={mainClassnames}>
           <div className="main">{chatBody}</div>

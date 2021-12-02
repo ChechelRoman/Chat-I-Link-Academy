@@ -20,20 +20,20 @@ export const Message: React.FC<Messages> = ({
   return (
     <div className={classes}>
       {attached ? (
-        <div className="file-container">
-          <div className="icon-container">
+        <div className="file_container">
+          <div className="icon_container">
             <img
-              className="attach-icon-1"
+              className="attach_icon_1"
               src={attachedIcon1}
               alt="attached file icon"
             />
             <img
-              className="attach-icon-2"
+              className="attach_icon_2"
               src={attachedIcon2}
               alt="attached file icon"
             />
           </div>
-          <div className="file-info-container">
+          <div className="file_info_container">
             <a href={link} target="_blank" rel="noopener noreferrer">
               <Text1>{title}</Text1>
             </a>

@@ -120,15 +120,15 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
 
     return (
       <form onSubmit={handleSubmit}>
-        <div className="send-menu">
-          <label className="send-menu__label">
+        <div className="send_menu">
+          <label className="send_menu__label">
             <img
-              className="send-menu__attach-icon"
+              className="send_menu__attach_icon"
               src={attachIcon}
               alt="attach icon"
             />
             <input
-              className="send-menu__file-input"
+              className="send_menu__file_input"
               type="file"
               onChange={handleUpload}
             />
@@ -141,13 +141,13 @@ export const ChatBodySendMenu: React.FC<ChatBodySendMenuProps> = observer(
             }}
             value={inputValue}
             onChange={handleInput}
-            className="send-menu__text-input"
+            className="send_menu__text_input"
             type="text"
             placeholder="Write something..."
           />
-          <button type="submit" className="send-menu__submit-button"></button>
+          <button type="submit" className="send_menu__submit_button"></button>
           <img
-            className="send-menu__send-icon"
+            className="send_menu__send_icon"
             src={sendIcon}
             alt="send icon"
           />

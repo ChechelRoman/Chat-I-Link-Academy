@@ -20,7 +20,7 @@ export const ChatBody: React.FC<ChatBodyProps> = observer(
   ({ socket, currentChatId, onClick }) => {
     if (currentChatId === undefined) {
       return (
-        <div className="user-tip">
+        <div className="user_tip">
           <Header4>Select a chat to start messaging</Header4>
         </div>
       );
@@ -47,8 +47,8 @@ export const ChatBody: React.FC<ChatBodyProps> = observer(
     });
 
     return (
-      <div className="chat-body">
-        <div className="chat-body__header">
+      <div className="chat_body">
+        <div className="chat_body__header">
           <ChatBodyHeader
             contactName={activeChat.name}
             onClick={onClick}
@@ -56,10 +56,10 @@ export const ChatBody: React.FC<ChatBodyProps> = observer(
             lastSeen={activeChat.lastSeen}
           />
         </div>
-        <div className="chat-body__messages">
+        <div className="chat_body__messages">
           <ul>{messageList}</ul>
         </div>
-        <div className="chat-body__send-menu">
+        <div className="chat_body__send_menu">
           <ChatBodySendMenu
             socket={socket}
             id={activeChat.id}

@@ -3,7 +3,7 @@ import logo from '../../../images/logo.svg';
 import './style.scss';
 
 interface LogoProps {
-  type: 'login-logo' | 'chat-logo';
+  type: 'login_logo' | 'chat_logo';
 }
 
 export const Logo: React.FC<LogoProps> = ({ type }) => {
