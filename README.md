@@ -1,3 +1,15 @@
 # Chatik
 
-## Preview: https://chechelroman.github.io/Chatik/
+## Приложение на базе cra, созданное во время стажировки в компании ilink
+
+### Установка
+
+```
+$ npm install
+```
+
+### Запуск приложения в режиме разработки
+
+```
+$ npm start
+```
