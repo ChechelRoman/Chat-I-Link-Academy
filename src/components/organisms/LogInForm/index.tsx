@@ -135,14 +135,14 @@ export const LogInForm: React.FC = () => {
               </span>
             </div>
             <div className="captcha-container">
-              <img src={src} alt="captcha" />
+              <img src={src} className="captcha" alt="captcha" />
+              <img
+                className="refresh-icon"
+                src={refreshCaptchaIcon}
+                alt="refresh captcha icon"
+                onClick={handleCaptchaRefresh}
+              />
             </div>
-            <img
-              className="refresh-icon"
-              src={refreshCaptchaIcon}
-              alt="refresh captcha icon"
-              onClick={handleCaptchaRefresh}
-            />
           </div>
         </div>
 

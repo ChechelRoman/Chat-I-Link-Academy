@@ -1,51 +1,187 @@
 .chat-template {
-  max-width: 1440px;
-  max-height: 1080px;
-  margin: 0 auto;
+  height: 100vh;
 
-  .header {
-    box-sizing: border-box;
+  .header-wrapper {
     height: 80px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #88ABE3;
+
+    .header {
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #88ABE3;
+    }
   }
+
+
 
   .content-wrapper {
     display: flex;
-    height: 1000px;
+    height: calc(100% - 80px);
     width: 100%;
 
-    .contacts-bar {
+    .contacts-wrapper {
       width: 362px;
-      height: 100%;
-      box-sizing: border-box;
-      border-right: 1px solid #88ABE3;
-
-      .loading-icon-container {
-        display: none;
+      .contacts-bar {
+        height: 100%;
+        box-sizing: border-box;
+        border-right: 1px solid #88ABE3;
+  
+        .loading-icon-container {
+          display: none;
+        }
       }
     }
 
-    .main {
-      width: 1078px;
+    .main-wrapper {
+      width: calc(100% - 362px);
       height: 100%;
-      background-image: url(./../../../images/chat-background.png);
-      background-origin: border-box;
-      background-repeat: no-repeat;
-      background-size: 1077px 1080px;
-      background-position-y: -80px;
-      display: flex;
-      justify-content: center;
+
+      .main {
+        height: 100%;
+        background-image: url(./../../../images/chat-background.svg);
+        background-size: cover;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
 
-@media screen and (max-width: 375px) {
+
+@media screen and (max-width: 1024px) {
   .chat-template {
-    width: 375px;
-    // height: 717px;
+
+    .content-wrapper {
+
+      .contacts-wrapper {
+        width: 300px;
+
+        .contacts-bar {
+
+          .contact-item {
+
+            .info {
+
+              .header4 {
+
+                font-size: 14px;
+                line-height: 17px;
+              }
+
+              .text2 {
+                font-size: 12px;
+                line-height: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .main-wrapper {
+        width: calc(100% - 300px);
+
+        .chat-body {
+
+          &__header {
+            height: 90px;
+
+            .contact-header {
+
+              .info-wrapper {
+    
+                .header3 {
+                  font-size: 19px;
+                  line-height: 23px;
+                }
+    
+                .text1 {
+                  font-size: 15px;
+                  line-height: 19px;
+                }
+              }
+            }
+          }
+
+          &__messages {
+            height: calc(100% - 160px);
+
+            .message {
+
+              .text1 {
+                font-size: 15px;
+                line-height: 19px;
+              }
+
+              .file-container {
+
+                .file-info-container {
+
+                  .text2 {
+                    font-size: 13px;
+                    line-height: 16px;
+                  } 
+                }
+              }
+            }
+          }
+
+          &__send-menu {
+            height: 70px;
+
+            .send-menu__text-input {
+              font-size: 15px;
+              line-height: 19px;
+            }
+
+            .send-menu__attach-icon {
+              padding-top: 25px;
+              padding-left: 25px;
+            }
+
+            .send-menu__send-icon {
+              padding-top: 25px;
+              padding-right: 25px;
+            }
+
+            .send-menu__submit-button {
+              top: 24px;
+              right: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .chat-template {
+
+    .content-wrapper {
+
+      .contacts-wrapper {
+        width: 280px;
+
+        .info {
+          padding-left: 10px;
+        }
+      }
+
+      .main-wrapper {
+        width: calc(100% - 280px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .chat-template {
+    width: 100%;
+    height: auto;
 
     .chosen {
       .header {
@@ -55,6 +191,8 @@
 
     .header-wrapper {
       width: 100%;
+      min-height: unset;
+      height: unset;
       .header {
         height: 64px;
         border-color: #D7E6FF;
@@ -74,11 +212,13 @@
     }
 
     .content-wrapper {
-      height: 653px;
-      width: 375px;
+      height: 100%;
+      width: 100%;
+      display: block;
 
       .contacts-wrapper {
         width: 100%;
+        min-width: unset;
         .contacts-bar {
           width: 100%;
           border-right: none;
@@ -86,19 +226,27 @@
 
           .loading-icon-container {
             display: flex;
-            margin-top: 267px;
-            margin-left: 160px;
+            margin-top: 50%;
+            margin-left: 40%;
           }
-  
-          .alone-user {
-            padding: 175px 0px 0px 88px;
+
+          .no-user-message {
+            padding-left: 23%;
+            .alone-user {
+              padding: 0;
+              padding-top: 30%;
+            }
+    
+            .header4 {
+              font-size: 14px;
+              line-height: 17px;
+              padding: 0;
+              padding-top: 23px;
+              padding-left: 5px;
+            }
           }
-  
-          .header4 {
-            font-size: 14px;
-            line-height: 17px;
-            padding-left: 93px;
-          }
+
+
   
           .contact-item {
             padding: 10px 0px 10px 14px;
@@ -122,6 +270,7 @@
       }
 
       .main-wrapper {
+        width: unset;
         .main {
           display: none;
         }
@@ -130,18 +279,19 @@
       .chosen {
         .main {
           display: block;
-          width: 375px;
-          height: 717px;
-          background-image: url(../../../images/mobile-chat-background.png);
+          width: 100%;
+          height: 99.5vh;
+          background-image: url(../../../images/mobile-chat-background.svg);
+          background-size: cover;
           background-origin: border-box;
           background-repeat: no-repeat;
-          background-size: 375px 717px;
           background-position-y: 0px;
 
           .chat-body {
             &__header {
+              height: 72px;
+              min-height: unset;
               .contact-header {
-                height: 72px;
                 display: flex;
                 padding: 0;
 
@@ -177,10 +327,11 @@
             }
 
             &__messages {
+              height: 100%;
               padding-bottom: 24px;
 
               .message {
-                max-width: 336px;
+                max-width: 85%;
                 margin-top: 24px;
 
                 .file-container {
@@ -222,6 +373,7 @@
             }
 
             &__send-menu {
+              min-height: unset;
               height: 48px;
 
               .send-menu {
@@ -260,5 +412,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .no-user-message {
+    padding-left: 19% !important;
   }
 }

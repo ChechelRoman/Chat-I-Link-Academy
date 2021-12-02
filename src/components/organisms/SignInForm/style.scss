@@ -1,14 +1,6 @@
 @import '../../_settings/variables';
 
 .sign-form-container {
-  .header1 {
-    margin-bottom: 10px;
-  }
-
-  .header2 {
-    margin-bottom: 20px;
-  }
-
   .header-blue {
     color: #5E93E7;
   }
@@ -37,14 +29,16 @@
         margin-left: 12px;
         text-align: center;
         padding-top: 12px;
-      }
-
-      .refresh-icon {
-        width: 16px;
-        height: 16px;
-        padding-top: 44px;
-        padding-left: 12px;
-        cursor: pointer;
+        position: relative;
+      
+        .refresh-icon {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+          top: 40%;
+          right: -2vw;
+        }
       }
     }
 

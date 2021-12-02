@@ -6,7 +6,7 @@
   text-align: center;
   border: 1px solid #5E93E7;
   border-radius: 32px;
-  margin-top: 451px;
+  margin-top: 35vh;
 
   .header4 {
     font-weight: 500;
@@ -25,15 +25,14 @@
     height: 96px;
   }
 
-  &__messages{
+  &__messages {
     box-sizing: border-box;
     width: 100%;
-    height: 824px;
+    height: calc(100% - 176px);
     overflow-y: auto;
     padding-bottom: 35px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: column-reverse;
 
     ul {
       margin: 0;

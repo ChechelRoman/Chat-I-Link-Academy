@@ -16,7 +16,8 @@ form {
       .send-menu__attach-icon {
         width: 22px;
         height: 22px;
-        padding: 30px;
+        padding-top: 30px;
+        padding-left: 30px;
         cursor: pointer;
       }
   
@@ -31,14 +32,14 @@ form {
       box-sizing: border-box;
       border: none;
       height: 100%;
-      width: 900px;
+      width: 100%;
       outline: none;
       font-family: $base-font-family;
       color: $primary-text-color;
       font-size: 16px;
       line-height: 20px;
       font-weight: 400;
-      padding: 30px 30px 30px 30px;
+      padding: 30px;
   
       &::placeholder {
         color: #CACACA;
@@ -60,7 +61,8 @@ form {
     .send-menu__send-icon {
       width: 24px;
       height: 21px;
-      padding: 30px;
+      padding-top: 30px;
+      padding-right: 30px;
       cursor: pointer;
     }
   }

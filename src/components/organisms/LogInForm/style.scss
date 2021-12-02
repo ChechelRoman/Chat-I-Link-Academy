@@ -29,14 +29,16 @@
         margin-left: 12px;
         text-align: center;
         padding-top: 12px;
-      }
+        position: relative;
 
-      .refresh-icon {
-        width: 16px;
-        height: 16px;
-        padding-top: 44px;
-        padding-left: 12px;
-        cursor: pointer;
+        .refresh-icon {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+          top: 40%;
+          right: -2vw;
+        }
       }
     }
 

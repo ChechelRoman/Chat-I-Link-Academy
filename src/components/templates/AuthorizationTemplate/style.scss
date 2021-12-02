@@ -1,54 +1,175 @@
-.container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  .authorization-page-template {
-    max-width: 1440px;
+.authorization-page-template {
+    height: auto;
     display: flex;
   
     &__left {
+      width: 50%;
+
       .login-form-container {
-        margin: 15vh 145px 315px 121px;
+        padding: 20vh 0 0 10vw;
       }
 
       .sign-form-container {
-        margin: 1vh 183px 63px 121px;
+        padding: 7vh 0 0 10vw;
       }
     }
   
     &__right {
-      background-image: url(../../../images/login-decor.png);
-      background-size: 100% 100%;
-      height: 100vh;
-      width: 724px;
+      background-image: url(../../../images/login-decor.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: calc(max(100vh, 1080px));
+      width: 50%;
       background-color: #EFF5FF;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+  .authorization-page-template {
+
+    &__left {
+      .login-form-container {
+        padding: 10vh 0 0 4vw;
+      }
+
+      .sign-form-container {
+        padding: 7vh 0 0 4vw;
+      }
     }
   }
 }
 
-@media screen and (max-width: 375px) {
-  .container {
-    display: block;
+@media screen and (max-width: 890px) {
+  .authorization-page-template {
 
+    &__left {
+      .login-form-container {
+        .login-logo {
+          width: 90px;
+          height: 40px;
+        }
+
+        .header1 {
+          font-size: 30px;
+          line-height: 35px;
+        }
+
+        .header2 {
+          font-size: 22px;
+          line-height: 27px;
+        }
+
+        .input {
+          font-size: 14px;
+          width: 320px; 
+        }
+
+        .captcha-input {
+          font-size: 14px;
+          width: 154px;
+        }
+
+        .captcha-container {
+          width: 154px;
+
+          .refresh-icon {
+            right: -2.5vw;
+          }
+        }
+
+        .submit-button {
+          width: 154px;
+        }
+
+        .button {
+          width: 154px;
+        }
+      }
+
+      .sign-form-container {
+        .login-logo {
+          width: 90px;
+          height: 40px;
+        }
+
+        .header1 {
+          font-size: 30px;
+          line-height: 35px;
+        }
+
+        .header2 {
+          font-size: 22px;
+          line-height: 27px;
+        }
+
+        .form-field__input {
+          .input {
+            font-size: 14px;
+            width: 320px;
+          }
+        }
+
+        .form-field__captcha {
+          .captcha-input {
+            font-size: 14px;
+            width: 154px;
+          }
+  
+          .captcha-container {
+            width: 154px;
+  
+            .refresh-icon {
+              right: -2.5vw;
+            }
+          }
+        }
+
+        .submit-button {
+          width: 154px;
+        }
+
+        .button {
+          width: 154px;
+        }
+
+        .select-container {
+          .placeholder-container {
+            font-size: 14px;
+            width: 154px;
+          }
+
+          .option {
+            font-size: 14px;
+            width: 154px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 428px) {
     .authorization-page-template {
-      width: 375px;
+      width: 100%;
       display: block;
   
       &__left {
+        width: 100%;
         position: absolute;
         top: 123px;
         margin: 0;
         z-index: 2;
   
         .login-form-container {
-          margin: 0;
-          padding-left: 14px;
+          padding: 0 5vw;
   
           .form-field {
             margin-bottom: 0px;
+            width: fit-content;
 
             &__captcha {
-              width: unset;
+              width: 90vw;
+              justify-content: space-between;
             }
           }
   
@@ -71,41 +192,39 @@
           }
   
           .input {
-            width: 348px;
+            width: 90vw;
             height: 48px;
           }
   
           .submit-button {
-            width: 347px;
+            width: 90vw;
             height: 56px;
           }
   
           .button {
-            width: 347px;
+            width: 90vw;
             height: 56px;
             margin-top: 8px;
             margin-left: 0;
           }
   
           .captcha-input {
-            width: 170px;
+            width: 43vw;
             height: 48px;
           }
   
           .captcha-container {
             box-sizing: border-box;
-            width: 166px;
+            width: 43vw;
             height: 48px;
             padding-top: 6px;
             position: relative;
-          }
-  
-          .refresh-icon {
-            height: 11px;
-            width: 11px;
-            position: absolute;
-            left: 325px;
-            bottom: 174px;
+
+            .refresh-icon {
+              height: 11px;
+              width: 11px;
+              right: 2vw;
+            }
           }
   
           .error-icon  {
@@ -115,13 +234,15 @@
   
         .sign-form-container {
           margin: 0;
-          padding-left: 14px;
+          padding: 0 5vw;
   
           .form-field {
             margin-bottom: 0px;
+            width: fit-content;
 
             &__captcha {
-              width: unset;
+              width: 90vw;
+              justify-content: space-between;
             }
           }
   
@@ -145,18 +266,18 @@
   
           .form-field__input {
             .input {
-              width: 348px;
+              width: 90vw;
               height: 48px;
             }
           }
   
           .submit-button {
-            width: 347px;
+            width: 90vw;
             height: 56px;
           }
   
           .button {
-            width: 347px;
+            width: 90vw;
             height: 56px;
             margin-top: 8px;
             margin-left: 0;
@@ -164,36 +285,34 @@
   
           .form-field {
             .captcha-input {
-              width: 170px;
+              width: 43vw;
               height: 48px;
             }
     
             .captcha-container {
               box-sizing: border-box;
-              width: 166px;
+              width: 43vw;
               height: 48px;
               padding-top: 6px;
               position: relative;
-            }
-    
-            .refresh-icon {
-              height: 11px;
-              width: 11px;
-              position: absolute;
-              left: 325px;
-              bottom: 174px;
+
+              .refresh-icon {
+                height: 11px;
+                width: 11px;
+                right: 2vw;
+              }
             }
           }
   
           .select-container {
             .placeholder-container {
-              width: 179px;
+              width: 43vw;
               height: 48px;
               padding-top: 11px;
             }
   
             .option {
-              width: 179px;
+              width: 43vw;
               height: 48px;
               padding-top: 11px;
             }
@@ -214,11 +333,10 @@
         top: 0;
         z-index: 1;
         height: 256px;
-        width: 375px;
-        background-image: url(../../../images/mobile-login-decor.png);
+        width: 100%;
+        background-image: url(../../../images/mobile-login-decor.svg);
         background-repeat: no-repeat;
-        background-size: 375px 256px;
+        background-size: cover;
       }
     }
-  }
 }

@@ -9,11 +9,11 @@ export const AuthorizationTemplate: React.FC<AuthorizationTemplateProps> = ({
   left,
 }) => {
   return (
-    <div className="container">
-      <div className="authorization-page-template">
-        <div className="authorization-page-template__left">{left}</div>
-        <div className="authorization-page-template__right"></div>
-      </div>
+    // <div className="container">
+    <div className="authorization-page-template">
+      <div className="authorization-page-template__left">{left}</div>
+      <div className="authorization-page-template__right"></div>
     </div>
+    // </div>
   );
 };
